@@ -69,7 +69,7 @@ $table_prefix  = 'wp_';
  * 例如，要使用WordPress简体中文界面，请在wp-content/languages
  * 放入zh_CN.mo，并将WPLANG设为'zh_CN'。
  */
-define('WPLANG', 'zh_CN');
+define('WPLANG', 'en');
 
 /**
  * 开发者专用：WordPress调试模式。
