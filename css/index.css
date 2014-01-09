@@ -304,14 +304,14 @@ em {
 .oolong1  {
 	width: 220px;
 	height: 250px;
-	background-image: url("img/milkoolong.jpg");
+	background-image: url("img/milkoolong.png");
 	
 	cursor: pointer;
 }
 .oolong2  {
 	width: 220px;
 	height: 250px;
-	background-image: url("img/chinaoolong.jpg");
+	background-image: url("img/chinaoolong.png");
 	cursor: pointer;
 }
 .oolong1, .oolong-button1 {
