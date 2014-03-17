@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+/*********FEATURED PRODUCTS******/
+.featured{text-align:center}
+.grid{color:#464646;font-size:24px;overflow:hidden;padding:100px 0 30px 0}
+.grid h3{font-size:24px;padding:5px 0}
+.grid a{color:#464646}
+.col{float:left;width:240px;margin-right:53px}
+.col_last{margin:0}
+.color_div{padding-top:40px}
+.color_div span{width:20px;height:20px;display:inline-block;border-radius:20px}
+.color1{background:#f8b551}
+.color2{background:#b3d465}
+.color3{background:#cfa972}
+.color4{background:#dcdcdc}
+.btn_div{border-top:1px #959595 dashed;text-align:center;clear:both;margin-top:40px;padding-top:45px}
+/**- 1. Choose most popular recipe -**/
+.products_btndiv{padding:160px 0 0 0;}
+.products_btndiv div{margin:50px 0}
+.products_btndiv a{background:none;border:2px #f8b551 solid;color:#f8b551;padding:10px 15px 0 15px;margin:0 30px}
+.products_btndiv a:hover{color:#fff}
+.products_btndiv .products_btn1:hover,.products_btndiv .products_hover0{background:#f9c474;color:#fff}
+.products_btndiv .products_btn2{border:2px #b3d465 solid;color:#b3d465}
+.products_btndiv .products_btn2:hover,.products_btndiv .products_hover1{background:#b3d465;color:#fff}
+.products_btndiv .products_btn3{border:2px #cfa972 solid;color:#cfa972}
+.products_btndiv .products_btn3:hover,.products_btndiv .products_hover2{background:#cfa972;color:#fff}
+.products_btndiv .products_btn4{border:2px #f29c9f solid;color:#f29c9f}
+.products_btndiv .products_btn4:hover,.products_btndiv .products_hover3{background:#f29c9f;color:#fff}
+.products_btndiv .products_btn5{border:2px #7ecef4 solid;color:#7ecef4}
+.products_btndiv .products_btn5:hover,.products_btndiv .products_hover4{background:#7ecef4;color:#fff}
+.products_div h2{border-bottom:1px #959595 dashed;text-align:center;font-size:18px;color:#464646;padding-bottom:8px}
+.products_div .featured img:hover{opacity:0.6}
+.products_div2 p{font-size:18px;padding:75px 0 50px 0}
+.scale span{background:#fff;border:2px #f8b551 solid;width:22px;height:22px; position:absolute;cursor:pointer; border-radius:24px;margin-top:-8px}
+.scale span:hover{box-shadow: 0 0 10px #d3d0d0}
+.scale{background:-moz-linear-gradient(left,#ffff06,#ff6e00);background:-webkit-gradient(linear,right bottom,0 100%, from(#ff6e00),to(#ffff06));width:280px;height:11px; position:relative; border-radius:11px}
+.products_tea{padding-top:60px}
+.products_teal a{color:#464646}
+.products_teal h3{font-size:30px;width:240px}
+.products_teadiv{clear:both;padding-top:25px}
+.products_teadiv div.l{margin-top:14px}
+.products_tear{font-size:18px;color:#f8b551;width:519px;margin-left:40px;border-left:1px #959595 dashed;padding:25px 0 0 40px;line-height:30px}
+.products_tear img{margin:10px 30px 0 0}
+.tea_page{padding:20px 0 0 235px}
+.products_div3,.products_div4{display:none}

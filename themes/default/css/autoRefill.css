@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+.custom_plan{text-align:center;padding:100px 0 35px 0}
+.custom_plan h1{font-size:60px}
+.custom_plan h3{font-size:18px;color:#464646}
+.custom_plan .form{font-size:48px}
+.select_box{display:inline-block;border:solid 1px #eba568;color:#eba568;position:relative;cursor:pointer;height:53px;line-height:60px}
+.option{border-left:solid 1px #eba568;border-right:solid 1px #eba568;position:absolute;top:54px;left:-1px;z-index:2;overflow:hidden;display:none}
+.option a{display:block;height:53px;background:#fff;border-bottom:1px #eba568 solid;padding:0 5px;color:#959595}
+.option a:hover{background:#eba568;color:#fff}
+.enroll{font-size:36px}
+.enroll span{color:#eba568}
+.enroll a{margin-left:30px; vertical-align:5px;height:38px;padding-top:7px}
+.plans h2,.life h2{text-align:center;font-size:36px;padding:60px 0 50px 0}
+.plans_div{font-size:18px;width:238px;text-align:center;margin:0 0 0 100px}
+.plans_calendar{text-align:left}
+.plans_calendar span{width:24px;height:24px;display:inline-block;text-align:center;margin:0 5px}
+.plans_calendar .plans_day{color:#959595}
+.plans_calendar .plans_calendarbg{background:#eba568; border-radius:24px;color:#fff}
+.plans_calendar div{border-top:1px #959595 solid;padding:8px 0 4px 0}
+.plans_calendar .plans_calendarfirst{border:0;text-align:right}
+.plans_div p{text-align:center;padding:60px 0 55px 0}
+.plans_div .btn{height:38px;padding:7px 50px 0 50px}
+.life{border-top:1px #959595 dashed;margin-top:70px;font-size:18px;color:#464646;text-align:center}
+.life a{display:block;font-size:30px;color:#000}
+.life_a{margin:40px 0 10px 0}
+.life .plans_calendar{height:282px;padding-top:50px;font-size:22px}
+.life .plans_calendar div{padding:9px 0 5px 0}
+.life .plans_calendar span{margin:0 8px}
+.life div.l{margin:0 36px 0 10px}
+.life img:hover{opacity:0.6}

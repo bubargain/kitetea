@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+.ousStory_banner img{display:block}
+.ousStory_div1,.ousStory_div3{padding:50px 0;overflow:hidden;clear:both}
+.ousStory{text-align:center;}
+.ousStory h2{font-size:30px;color:#000;text-transform:uppercase}
+.ousStory p{font-size:18px;color:#464646;line-height:34px}
+.ousStory_div1 div.r{width:56%;padding:100px 3% 0 3%;height:490px}
+.ousStory_div1 div.l{width:38%;text-align:left;height:490px;background:url(../images/ourStory_04.jpg) no-repeat center;background-size:auto 490px}
+.ousStory_div2 div.l{width:49%;padding:20px 3% 0 3%;height:390px}
+.ousStory_div2 div.r{width:45%;height:390px;background:url(../images/ourStory_08.jpg) no-repeat center;background-size:auto 390px}
+.ousStory_div3 div.l{width:30%;height:434px;background:url(../images/ourStory_10.jpg) no-repeat center;background-size:auto 434px}
+.ousStory_div3 div.r{width:64%;padding:60px 3% 0 3%;height:434px}
+.ousStory_div4{font-size:24px;border-top:1px #959595 dashed;padding-top:45px;line-height:44px}
+.ousStory_font{font-size:48px;color:#fff;font-family:Vijaya;width:400px;position:absolute;top:33%;right:12%;text-align:left; text-shadow:2px 2px 2px #535353;line-height:50px}

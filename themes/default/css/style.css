@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0;font:12px Kalinga}
+input,textarea{font:12px Kalinga;padding:0;margin:0}
+input, button, select, textarea{ outline:none; } 
+a{text-decoration:none;color:#000}
+a:hover{text-decoration:none}
+h1,h2,h3{font-weight:200;font-size:12px;margin:0}
+ul{list-style:none;padding:0;margin:0}
+p,form,select{margin:0;padding:0}
+img{border:0}
+th{font-weight:200}
+.l{float:left}
+.r{float:right}
+.con_div{width:1120px;margin:0 auto;overflow:hidden}
+.btn{color:#fff;font-size:24px;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px}
+.btn:hover{background:#f39800}
+.hr{ background:linear-gradient(#fff,#d7d5d5);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#d7d5d5));}
+.hr2{ background:linear-gradient(#d7d5d5,#fff);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d5d5), to(#fff))}
+.hr3{ background:linear-gradient(#eae9e9,#fff);height:9px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#eae9e9), to(#fff))}
+.hr4{ background:linear-gradient(#d7d3ae,#fffcd0);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d3ae), to(#fffcd0))}
+.page a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
+.page .page_a{background:#c4161c}
+/***********页面顶部样式*******/
+#header{font-size:14px;text-align:center;margin-bottom:-86px}
+nav a{margin:0 30px;display:inline-block;padding:0 0 3px 0;border-bottom:1px #fff solid;-moz-transition:border-color .5s ease-in;-webkit-transition:border-color .5s ease-in;-o-transition:border-color .5s ease-in;-ms-transition:border-color .5s ease-in;transition:border-color .5s ease-in}
+nav a:hover{border-color:#000}
+#header .logo:hover{border:0}
+#header .logo{position:relative;z-index:999;border-bottom:0;padding:0;margin:0 80px}
+#header .logo img{vertical-align:-113px}
+nav a:hover{color:#959595}
+nav .nav_a{color:#c4161c}
+/************页面底部样式*********/
+#footer{padding-top:50px}
+.footer_div{border-top:1px #959595 dashed;font-size:24px;color:#959595;padding:40px 0 30px 0}
+.footer_div h3{font-weight:bold;font-size:24px;margin-top:8px}
+.footer_div a{display:block;color:#959595;margin-top:13px}
+.footer_expl{padding:0 45px 0 85px}
+.footer_prod a{font-size:18px;margin-top:8px}
+.footer_mail{text-align:center;border-left:1px #959595 dashed;border-right:1px #959595 dashed;padding:0 66px;height:215px}
+.footer_mail h3{margin:45px 0 15px 0}
+.friends{text-align:center;padding-left:55px}
+.friends a{display:inline;margin:0 12px}
+.friends h3{margin-bottom:25px}
+.footer_usa{height:52px;line-height:52px;font-size:14px;color:#959595;padding:0 50px}
+/**弹出层**/
+#layer_bg{opacity: 0.3;visibility: visible;background-color: black;position: fixed;top: 0px;right: 0px;bottom: 0px;left: 0px;z-index: 2000;transition: all 0.3s;-webkit-transition: all 0.3s;display:none}
+#layer_div{text-align:center;z-index: 2001;position: fixed;top: 0px;right: 0px;bottom: 0px;left: 0px;display:none}
+#layer_con{opacity:1;width: 500px;height: 400px;padding: 50px;color: #fff;background-color: #333333;display:inline-block;position:relative; vertical-align:middle;text-align:left;font-size:15px;z-index: 2003}
+#layer_con h3{font-size: 25px;margin-bottom: 20px;}
+#layer_con em{color:rgba(253,212,31,1)}
+#layer_con p{margin-bottom:18px}
+.layer_align{display: inline-block;vertical-align: middle;height: 100%;}
+
+
+
