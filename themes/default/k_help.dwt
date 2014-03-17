@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KITE Auto-Refill</title>
+<link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_css_path}/help.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div>
+        <!-- 顶部开始 -->
+        <!-- #BeginLibraryItem "/library/k_page_header.lbi" --><!-- #EndLibraryItem -->
+        <!-- 顶部结束 -->
+        <!-- 正文开始 -->
+        <div id="content">
+        	<div class="hr4"></div>
+            <div class="help_touch">
+            	<h1>Get In Touch</h1>
+                <p>We're here. How can we help?</p>
+                <p>Contact us at any time.</p>
+                <div><a href="mailto:contact@kitetea.com" class="help_email">contact@kitetea.com</a><a href="javascript:void(0)" class="help_tel">+86-021-60546040</a></div>
+            </div>
+            <div class="hr3"></div>
+            <div class="con_div">
+            	<div class="help_menu">                                        
+                	<nav>
+                        <a href="javascript:void(0)" class="nav_a">ORDERS</a>
+                        <a href="javascript:void(0)">PRODUCT</a>
+                        <a href="javascript:void(0)">AUTO-REFILL</a>
+                        <a href="javascript:void(0)">PAYMENT</a>
+                        <a href="javascript:void(0)">SOCIAL MISSION</a>
+                        <a href="javascript:void(0)">COMPANY</a>
+                    </nav>
+                </div>
+                <div class="help_con">
+                	<h2>ORDER QUESTIONS</h2>
+                    <div>
+                    	<span>Where do you ship?</span>
+                        <p>We currently ship to the entire United States, Canada, and all US Military locations around the world via their APO, FPO & DPO addresses. In addition, we ship to Russia, Japan, Korea ,Brazil and almost all countries 'CHINA POST' can achieve, you may experience slightly longer delivery timelines).  </p>
+                    </div>
+                    <div>
+                    	<span>Do you offer free shipping?</span>
+                        <p>We offer free shipping on any order over $30.  Our standard economy option costs $5, but we're hoping to offer lower shipping costs in the future.    </p>
+                    </div>
+                    <div>
+                    	<span>I need my order fast! Can I pay for expedited shipping?</span>
+                        <p>If for any reason you need to receive your order in fewer than 5 business days, you can expedite the processing of your order for an additional fee. In the US you may pay $10 for 3-4 day shipping. If you have any questions, you can reach us at (021) 6054.6040 from 10am-6pm </p>
+                    </div>
+                    <h2>PRODUCT QUESTIONS</h2>
+                  
+                    <h2>AUTO-REFILL QUESTIONS</h2>
+                     <div>
+                    <span>How does auto-refill work?</span>
+                    <p>If you find yourself reminiscing about past orders,you can arrange for an auto-refill of your recipe.Now, we think this should be really, really easy for you to setup and manage, so there are simple controls built into both your account and the auto-refill page for your convenience.</p>
+                    </div>
+                    <div>
+                    <span>When do you ship my refills?</span>
+                    <p>We ship your refill blades at whatever monthly interval you’d like. You can always check this in your Profile, and if you want to change the day that an upcoming shipment is scheduled to head your way, just mail us at order@kitetea.com.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 正文结束 -->
+        <!-- 尾部开始 -->
+         <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    	<!-- 尾部结束 -->
+    </div>
+	{insert_scripts files='jquery-1.7.2.min.js,kite_common.js'}
+    <script type="text/javascript">
+		var q_help=null;
+		$(".help_con span").click(function(){
+			if(!$(this).next().is(":hidden"))return;
+			if(q_help!=null){
+				$(q_help).slideUp();
+			}
+			$(this).next().slideDown();
+			q_help=$(this).next();
+		});
+		$(".help_menu a").click(function(){
+			$(".help_menu").css("position","fixed");
+			$("html, body").animate({scrollTop: $(".help_con h2").eq($(this).index()).offset().top-60});	
+		});
+		 $(window).scroll(function () {
+			 var qtop=$(window).scrollTop();
+			 if(qtop>600){
+				 $(".help_menu").css("position","fixed");	 
+			 }else{
+				 $(".help_menu").css("position","inherit");
+			 }
+		});
+	</script>
+</body>
+</html>
