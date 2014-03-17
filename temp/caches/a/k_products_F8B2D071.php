@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:45:"F:/website/kite/themes/default/k_products.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395055231;s:8:"maketime";i:1395051631;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:45:"F:/website/kite/themes/default/k_products.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395071464;s:8:"maketime";i:1395067864;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -183,7 +183,7 @@
 </div>    	
     </div>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script><script type="text/javascript" src="js/kite_common.js"></script><script type="text/javascript" src="js/scale.js"></script>    <script type="text/javascript">
-		var tea=[["images/tea.jpg","images/index_13.jpg","images/tea.jpg","images/tea.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
+		var tea=[["themes/default/images/gh.jpg","themes/default/images/mdx.jpg","themes/default/images/mlh.jpg","themes/default/images/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
 		new scale('btn1','bar1','title1');
 		new scale('btn2','bar2','title2');
 		new scale('btn3','bar3','title3');

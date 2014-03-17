@@ -142,7 +142,7 @@
     </div>
 	<?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,kite_common.js,scale.js')); ?>
     <script type="text/javascript">
-		var tea=[["images/tea.jpg","images/index_13.jpg","images/tea.jpg","images/tea.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
+		var tea=[["<?php echo $this->_var['ecs_img_path']; ?>/gh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mdx.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mlh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
 		new scale('btn1','bar1','title1');
 		new scale('btn2','bar2','title2');
 		new scale('btn3','bar3','title3');
