@@ -1,8 +1,9 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:58:"F:/website/kite/eshop/upload/themes/default/k_ourstory.dwt";i:1;s:69:"F:/website/kite/eshop/upload/themes/default/library/k_page_header.lbi";i:2;s:67:"F:/website/kite/eshop/upload/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395030666;s:8:"maketime";i:1395027066;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:45:"F:/website/kite/themes/default/k_ourstory.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395055144;s:8:"maketime";i:1395051544;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>KITE's Story</title>
 <link href="themes/default/css/style.css" rel="stylesheet" type="text/css" />
 <link href="themes/default/css/ourStory.css" rel="stylesheet" type="text/css" />
@@ -17,9 +18,9 @@
                 <a href="auto_refill.php" id="link_autorefill" >Auto-Refill</a>
                 <a href="ourstory.php" id="link_ourstory">Our Story</a>
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
-                <a href="charity.php" id="link_charity">Help Farmers</a>
+                <a href="charity.php" id="link_charity">Alleviate Poverty</a>
                 <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="javascript:void(0)" id="link_help">Help</a>
+                <a href="help.php" id="link_help">Help</a>
             </nav>
             <input type="hidden" id="hpage" value="ourstory" />
         </div>

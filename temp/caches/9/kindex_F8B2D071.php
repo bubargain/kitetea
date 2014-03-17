@@ -1,9 +1,10 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:41:"F:/website/kite/themes/default/kindex.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395032018;s:8:"maketime";i:1395028418;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:41:"F:/website/kite/themes/default/kindex.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395055109;s:8:"maketime";i:1395051509;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
-<title>KITE index</title>
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
+<title>KITE TEA - Predominant Taste From Tea Homeland</title>
 <link href="themes/default/css/style.css" rel="stylesheet" type="text/css" />
 <link href="themes/default/css/index.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -24,20 +25,24 @@
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
                 <a href="charity.php" id="link_charity">Alleviate Poverty</a>
                 <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="javascript:void(0)" id="link_help">Help</a>
+                <a href="help.php" id="link_help">Help</a>
             </nav>
             <input type="hidden" id="hpage" value="index" />
         </div>
        
         
         <div id="content">
-        	<div class="hr2"></div>
+        
         	<div class="topics_img">
-            	<a href="javascript:void(0)" class="prev"></a><a href="javascript:void(0)" class="next"></a>
+            	<a href="ourstory.php" class="prev"></a><a href="javascript:void(0)" class="next"></a>
                 <div class="topics_img_box">
-                    <a  target="_blank"><span class="imt_predo"><em>Predominant Taste From Tea Homeland</em></span></a>
-                    <a target="_blank"></a>
-                    <a  target="_blank"></a>
+                    <a href="javascript:void(0)" target="_blank"><img src="themes/default/images/banner_02.jpg" width="100%"><span class="imt_predo imt_predo2"><em>Predominant Taste From Tea Homeland</em></span></a>
+                    <a href="javascript:void(0)" target="_blank"><img src="themes/default/images/shave.jpg" width="100%">
+                   
+                    </a>
+                    <a href="ourstory.php" target="_blank"><img src="themes/default/images/ourStory_02.jpg" width="100%">
+                     <span class="imt_predo"><em>No matter how far you fly away,look back we will be there always.</em></span>
+                     </a>
                 </div>
                 <div class="topics_img_icon"><a href="javascript:void(0)" target="_blank"></a><a href="javascript:void(0)" target="_blank"></a><a href="javascript:void(0)" target="_blank"></a></div>
             </div>
@@ -49,8 +54,8 @@
                         <section class="grid">
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_06.jpg" width="240" height="240">
+                                <a href="products.php?g=black">
+                                    <img src="themes/default/images/pro-pic2.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color1"></span></div>
                                     <h3>BLACK TEA</h3>
                                     <p class="price">$15.00</p>
@@ -58,8 +63,8 @@
                             </div>
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=green">
+                                    <img src="themes/default/images/pro-pic3.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color2"></span></div>
                                     <h3>GREEN TEA</h3>
                                     <p class="price">$15.00</p>
@@ -67,8 +72,8 @@
                             </div>
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=puer">
+                                    <img src="themes/default/images/pro-pic1.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color3"></span></div>
                                     <h3>PUER TEA</h3>
                                     <p class="price">$15.00</p>
@@ -76,15 +81,15 @@
                             </div>
                             <div class="col col_last">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=white">
+                                    <img src="themes/default/images/pro-pic4.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color4"></span></div>
                                     <h3>WHITE TEA</h3>
                                     <p class="price">$15.00</p>
                                 </a>
                             </div>
                         </section>
-                        <div class="btn_div"><a href="javascript:void(0)" class="btn">SEE ALL PRODUCTS</a></div>
+                        <div class="btn_div"><a href="products.php" class="btn">BLEND BY YOURSELF</a></div>
                     </div>
                     <div class="featured more">
                         <h2>MORE FROM KITE TEA</h2>
@@ -147,13 +152,10 @@
     	
 </div>       
     
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script><script type="text/javascript" src="js/scroll.js"></script>    <script type="text/javascript">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script><script type="text/javascript" src="js/scroll.js"></script>   <script type="text/javascript">
         $(document).ready(function() {
-			var imglist=['themes/default/images/banner_02.jpg','themes/default/images/banner_02.jpg','themes/default/images/banner_02.jpg'];
-			var q_img=$(".topics_img_box a");
-			for (var i=0;i<q_img.length;i++){
-           		q_img.eq(i).css("background-image","url("+imglist[i]+")");
-       		}
+			$(".topics_img").height($(".topics_img_box img").height());
+			$(".topics_img_box").height($(".topics_img_box img").height());
             img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
         });
     </script>

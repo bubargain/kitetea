@@ -3,6 +3,7 @@
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>Auto Refill KITE Tea Products</title>
 <meta name="Keywords" content="<?php echo $this->_var['keywords']; ?>" />
 <meta name="Description" content="<?php echo $this->_var['description']; ?>" />

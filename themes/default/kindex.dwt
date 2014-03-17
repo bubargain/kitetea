@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>KITE TEA - Predominant Taste From Tea Homeland</title>
 <link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
 <link href="{$ecs_css_path}/index.css" rel="stylesheet" type="text/css" />

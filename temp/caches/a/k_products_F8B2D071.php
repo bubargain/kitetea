@@ -1,8 +1,9 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:45:"F:/website/kite/themes/default/k_products.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395032021;s:8:"maketime";i:1395028421;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:45:"F:/website/kite/themes/default/k_products.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395055231;s:8:"maketime";i:1395051631;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>KITE AUTO BLEND TEA - your own script!</title>
 <meta name="Keywords" content="ECSHOP Demo site" />
 <meta name="Description" content="ECSHOP Demo site" />
@@ -21,7 +22,7 @@
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
                 <a href="charity.php" id="link_charity">Alleviate Poverty</a>
                 <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="javascript:void(0)" id="link_help">Help</a>
+                <a href="help.php" id="link_help">Help</a>
             </nav>
             <input type="hidden" id="hpage" value="products" />
         </div>
@@ -34,15 +35,15 @@
             	<div class="products_btndiv">
                 	<h2>- 1. Choose popular recipe or blend by yourself -</h2>
                 	<div><a href="javascript:void(0)" class="btn products_btn1">START DIY</a>
-                    
-                    <a href="javascript:void(0)" class="btn products_btn2">EARL GREY</a><a href="javascript:void(0)" class="btn  products_btn3">EARL GREY</a><a href="javascript:void(0)" class="btn  products_btn4">EARL GREY</a><a href="javascript:void(0)" class="btn  products_btn5">EARL GREY</a></div>
+                    Or
+                    <a href="javascript:void(0)" class="btn products_btn2">EARL GREY</a><a href="javascript:void(0)" class="btn  products_btn3">Daniel's </a><a href="javascript:void(0)" class="btn  products_btn4">Callie's</a><a href="javascript:void(0)" class="btn  products_btn5">Andrey's</a></div>
                 </div>
                 <div class="featured products_div3">
                 	<h2>- 2. Choose category of tea you like -</h2>
                     <section class="grid">
                         <div class="col">
                             <a href="javascript:void(0)">
-                                <img src="themes/default/images/index_06.jpg" width="240" height="240">
+                                <img src="themes/default/images/t_black.jpg" width="240" height="240">
                                 <div class="color_div"><span class="color1"></span></div>
                                 <h3>BLACK TEA</h3>
                             </a>
@@ -50,7 +51,7 @@
                         </div>
                         <div class="col">
                             <a href="javascript:void(0)">
-                                <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <img src="themes/default/images/t_green.jpg" width="240" height="240">
                                 <div class="color_div"><span class="color2"></span></div>
                                 <h3>GREEN TEA</h3>    
                              </a>
@@ -60,7 +61,7 @@
                         </div>
                         <div class="col">
                             <a href="javascript:void(0)">
-                                <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <img src="themes/default/images/t_puer.jpg" width="240" height="240">
                                 <div class="color_div"><span class="color3"></span></div>
                                 <h3>PU'ER TEA</h3>
                             </a>
@@ -70,7 +71,7 @@
                         </div>
                         <div class="col col_last">
                             <a href="javascript:void(0)">
-                                <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <img src="themes/default/images/t_white.jpg" width="240" height="240">
                                 <div class="color_div"><span class="color4"></span></div>
                                 <h3>WHITE TEA</h3>
                             </a>
@@ -139,10 +140,13 @@
                     </p>
                 </div>
                 <div class="products_div2">
-               		<div class="btn_div"><a href="javascript:void(0)" class="btn">ADD TO CART</a></div>
+               		<div class="btn_div enroll"><a href="javascript:void(0)" class="btn">ADD TO CART</a></div>
                 </div>
             </div>
         </div>
+        
+        
+        
         
         
         
@@ -206,6 +210,34 @@
 			$(".products_tear img").attr("src",tea[0][num]);	
 			$(".products_tear p").html(tea[1][num]);	
 		});
+	$(document).ready(function(){
+		$(".enroll a").click(function(){
+			$("#layer_bg").show();
+		    $("#layer_div").fadeIn();	
+		});
+	})
+	$(document).bind("click",function(e){
+		var target  = $(e.target);
+		if(target.closest("#layer_con").length == 0&&target.closest(".enroll a").length == 0){
+		   $("#layer_bg").hide();
+		   $("#layer_div").fadeOut();
+		}
+	}) 
     </script>
+    
+     
+    <div id="layer_bg"></div>
+    <div id="layer_div">
+    	<div id="layer_con">
+        	<h3>Coming soon~</h3>
+            <p>KITE website is under construction now. You will be availble to purchase in short time</p>
+            <p>Please don't be hesitate to contact us if you have any suggestions.</p>
+            <p>Thanks~</p>
+            <br/>
+            <p>KITE TEAM</p>
+           
+        </div>
+        <div class="layer_align"></div>
+    </div>
 </body>
 </html>

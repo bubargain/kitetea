@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>KITE Auto-Refill</title>
 <link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
 <link href="{$ecs_css_path}/help.css" rel="stylesheet" type="text/css" />
@@ -67,15 +68,24 @@
     	<!-- 尾部结束 -->
     </div>
 	{insert_scripts files='jquery-1.7.2.min.js,kite_common.js'}
-    <script type="text/javascript">
-		var q_help=null;
+		
+		
+		<script type="text/javascript">
+		var q_help=null,q_this=null;
 		$(".help_con span").click(function(){
-			if(!$(this).next().is(":hidden"))return;
+			if(!$(this).next().is(":hidden")){
+				q_this=$(this).next();	
+			};
 			if(q_help!=null){
 				$(q_help).slideUp();
-			}
-			$(this).next().slideDown();
-			q_help=$(this).next();
+			};
+			if(q_this==null){
+				$(this).next().slideDown();
+				q_help=$(this).next();
+			}else{
+				q_help=null;
+				q_this=null;	
+			};
 		});
 		$(".help_menu a").click(function(){
 			$(".help_menu").css("position","fixed");
@@ -89,6 +99,7 @@
 				 $(".help_menu").css("position","inherit");
 			 }
 		});
+	
 	</script>
 </body>
 </html>

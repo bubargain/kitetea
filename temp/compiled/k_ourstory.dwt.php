@@ -3,6 +3,7 @@
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>KITE's Story</title>
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/style.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/ourStory.css" rel="stylesheet" type="text/css" />

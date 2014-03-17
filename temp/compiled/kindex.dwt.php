@@ -3,7 +3,8 @@
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
-<title>KITE index</title>
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
+<title>KITE TEA - Predominant Taste From Tea Homeland</title>
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/style.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/index.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -19,13 +20,17 @@
         <?php echo $this->fetch('library/k_page_header.lbi'); ?>
         
         <div id="content">
-        	<div class="hr2"></div>
+        
         	<div class="topics_img">
-            	<a href="javascript:void(0)" class="prev"></a><a href="javascript:void(0)" class="next"></a>
+            	<a href="ourstory.php" class="prev"></a><a href="javascript:void(0)" class="next"></a>
                 <div class="topics_img_box">
-                    <a  target="_blank"><span class="imt_predo"><em>Predominant Taste From Tea Homeland</em></span></a>
-                    <a target="_blank"></a>
-                    <a  target="_blank"></a>
+                    <a href="javascript:void(0)" target="_blank"><img src="themes/default/images/banner_02.jpg" width="100%"><span class="imt_predo imt_predo2"><em>Predominant Taste From Tea Homeland</em></span></a>
+                    <a href="javascript:void(0)" target="_blank"><img src="themes/default/images/shave.jpg" width="100%">
+                   
+                    </a>
+                    <a href="ourstory.php" target="_blank"><img src="themes/default/images/ourStory_02.jpg" width="100%">
+                     <span class="imt_predo"><em>No matter how far you fly away,look back we will be there always.</em></span>
+                     </a>
                 </div>
                 <div class="topics_img_icon"><a href="javascript:void(0)" target="_blank"></a><a href="javascript:void(0)" target="_blank"></a><a href="javascript:void(0)" target="_blank"></a></div>
             </div>
@@ -37,8 +42,8 @@
                         <section class="grid">
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_06.jpg" width="240" height="240">
+                                <a href="products.php?g=black">
+                                    <img src="themes/default/images/pro-pic2.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color1"></span></div>
                                     <h3>BLACK TEA</h3>
                                     <p class="price">$15.00</p>
@@ -46,8 +51,8 @@
                             </div>
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=green">
+                                    <img src="themes/default/images/pro-pic3.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color2"></span></div>
                                     <h3>GREEN TEA</h3>
                                     <p class="price">$15.00</p>
@@ -55,8 +60,8 @@
                             </div>
                             <div class="col">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=puer">
+                                    <img src="themes/default/images/pro-pic1.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color3"></span></div>
                                     <h3>PUER TEA</h3>
                                     <p class="price">$15.00</p>
@@ -64,15 +69,15 @@
                             </div>
                             <div class="col col_last">
 								
-                                <a href="javascript:void(0)">
-                                    <img src="themes/default/images/index_07.jpg" width="240" height="240">
+                                <a href="products.php?g=white">
+                                    <img src="themes/default/images/pro-pic4.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color4"></span></div>
                                     <h3>WHITE TEA</h3>
                                     <p class="price">$15.00</p>
                                 </a>
                             </div>
                         </section>
-                        <div class="btn_div"><a href="javascript:void(0)" class="btn">SEE ALL PRODUCTS</a></div>
+                        <div class="btn_div"><a href="products.php" class="btn">BLEND BY YOURSELF</a></div>
                     </div>
                     <div class="featured more">
                         <h2>MORE FROM KITE TEA</h2>
@@ -106,13 +111,10 @@
        
     
 <?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,scroll.js')); ?>
-    <script type="text/javascript">
+   <script type="text/javascript">
         $(document).ready(function() {
-			var imglist=['themes/default/images/banner_02.jpg','themes/default/images/banner_02.jpg','themes/default/images/banner_02.jpg'];
-			var q_img=$(".topics_img_box a");
-			for (var i=0;i<q_img.length;i++){
-           		q_img.eq(i).css("background-image","url("+imglist[i]+")");
-       		}
+			$(".topics_img").height($(".topics_img_box img").height());
+			$(".topics_img_box").height($(".topics_img_box img").height());
             img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
         });
     </script>

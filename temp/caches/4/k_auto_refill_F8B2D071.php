@@ -1,8 +1,9 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:48:"F:/website/kite/themes/default/k_auto_refill.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395032023;s:8:"maketime";i:1395028423;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:48:"F:/website/kite/themes/default/k_auto_refill.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395055141;s:8:"maketime";i:1395051541;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
 <title>Auto Refill KITE Tea Products</title>
 <meta name="Keywords" content="ECSHOP Demo site" />
 <meta name="Description" content="ECSHOP Demo site" />
@@ -21,7 +22,7 @@
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
                 <a href="charity.php" id="link_charity">Alleviate Poverty</a>
                 <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="javascript:void(0)" id="link_help">Help</a>
+                <a href="help.php" id="link_help">Help</a>
             </nav>
             <input type="hidden" id="hpage" value="autorefill" />
         </div>

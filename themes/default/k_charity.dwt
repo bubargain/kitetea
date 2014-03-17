@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
+<title>Our Story</title>
+<link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_css_path}/ourStory.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div>
+        <!-- 顶部开始 -->
+       <!-- #BeginLibraryItem "/library/k_page_header.lbi" --><!-- #EndLibraryItem -->
+        <!-- 顶部结束 -->
+        <!-- 正文开始 -->
+        <div id="content" class="ousStory shave">
+        	<div class="ousStory_banner"><img src="images/shave2.jpg" width="100%"></div>
+            <div class="ousStory_font shave_font">KITE encourage people  to<br> share and to give.</div>
+        	<div class="hr2"></div>
+            <h1>“Give comfort to the aged, trust to my friends and nurturance to the young.”<br>— Confucius</h1>
+            <div class="shave_div2">
+                <div class="l shave_div">
+                    <h2>One For Children</h2>
+                    <p>For every package we sell, we will donate one Yuan (1/6 US Dollar) to non-profit organizations that help school-deprived children in rural area.</p>
+                </div>
+                <div class="r shave_img"><img src="images/shave_03.jpg" width="100%"></div>
+            </div>
+            <div class="ousStory_div3">
+                <div class="l shave_img"><img src="images/shave_05.jpg" width="100%"></div>
+                <div class="r shave_div">
+                    <h2>One For Old</h2>
+                    <p>Because of population structure imbalance problem of China in short future, we will invest more resources into the construction of nursing home care . </p>
+                </div>
+            </div>
+        </div>
+        <!-- 正文结束 -->
+        <!-- 尾部开始 -->
+          <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    	<!-- 尾部结束 -->
+    </div>
+  {insert_scripts files='jquery-1.7.2.min.js,kite_common.js'}
+    <script type="text/javascript">
+        $(document).ready(function() {
+			var q_shave=$(".shave_div");
+			for(var i=0;i<q_shave.length;i++){
+				$(q_shave).eq(i).height($(".shave_img img").eq(i).height());
+			}
+        });
+    </script>
+</body>
+</html>
