@@ -1,8 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 /************页面正文样式******/
-.topics_img{width:100%}
-.topics_img_box a{width:100%;position:absolute}
+.topics_img{width:100%;height:518px}
+.topics_img_box{height:518px}
+.topics_img_box a{width:100%;position:absolute;}
 .topics_img_icon{position:relative;margin:-3% 0 0 0;text-align:center}
 .topics_img_icon a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
 .topics_img_icon .icon_a{background:#c4161c}
