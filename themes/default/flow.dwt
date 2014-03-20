@@ -14,7 +14,9 @@
 {insert_scripts files='common.js,shopping_flow.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div style="height:160px">
+<!-- #BeginLibraryItem "/library/k_page_header.lbi" --><!-- #EndLibraryItem -->
+</div>
 <!--当前位置 start-->
 <div class="block box">
  <div id="ur_here">

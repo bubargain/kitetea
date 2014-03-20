@@ -111,7 +111,7 @@
         </div>
         <!-- 正文结束 -->
         <!-- 尾部开始 -->
-         <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+        
     	<!-- 尾部结束 -->
     </div>
     
@@ -187,6 +187,6 @@
 		}
 	}) 
 </script>
- 
+  <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

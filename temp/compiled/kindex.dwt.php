@@ -106,17 +106,11 @@
             </div>
         </div>
         
-        
-       <?php echo $this->fetch('library/page_footer.lbi'); ?>
+     
        
     
 <?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,scroll.js')); ?>
-   <script type="text/javascript">
-        $(document).ready(function() {
-			$(".topics_img").height($(".topics_img_box img").height());
-			$(".topics_img_box").height($(".topics_img_box img").height());
-            img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
-        });
-    </script>
+     
+       <?php echo $this->fetch('library/page_footer.lbi'); ?>
 </body>
 </html>

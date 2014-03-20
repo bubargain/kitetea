@@ -44,10 +44,11 @@ Applying to modern life, the fast-paced environment often pushes stresses on you
             <div class="con_div ousStory_div4">Kite Tea brings you the remarkable aroma and flavor, as well as a peaceful mind to taste that flavor. Nevertheless, this balance indicates the Daoistic idea of the unity of man and nature--that to relax your heart and mind to feel the nature. </div>
         </div>
         <!-- 正文结束 -->
-        <!-- 尾部开始 -->
-        <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
-    	<!-- 尾部结束 -->
+        
     </div>
 	{insert_scripts files='jquery-1.7.2.min.js,kite_common.js'}
+    <!-- 尾部开始 -->
+        <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    	<!-- 尾部结束 -->
 </body>
 </html>

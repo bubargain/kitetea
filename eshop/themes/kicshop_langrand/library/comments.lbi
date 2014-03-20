@@ -1,3 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-{insert_scripts files='transport.js,utils.js'}
-<div id="ECS_COMMENT"> {* ECSHOP reminds you: dynamically load comments_list.lbi to show comments list and comments table *}{insert name='comments' type=$type id=$id}</div>

@@ -1,7 +1,0 @@
-Version 2.0
-
-	i) Initial Release.
-	
-Version 2.0.1
-
-	i) Major Bug Fixes

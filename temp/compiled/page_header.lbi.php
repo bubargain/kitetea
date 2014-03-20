@@ -1,4 +1,4 @@
-<script type="text/javascript">
+l<script type="text/javascript">
 var process_request = "<?php echo $this->_var['lang']['process_request']; ?>";
 </script>
 <div class="block clearfix">

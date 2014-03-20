@@ -15,8 +15,15 @@
 <?php echo $this->smarty_insert_scripts(array('files'=>'common.js,shopping_flow.js')); ?>
 </head>
 <body>
+<div style="height:160px">
 <?php echo $this->fetch('library/k_page_header.lbi'); ?>
+</div>
 
+<div class="block box">
+ <div id="ur_here">
+  <?php echo $this->fetch('library/ur_here.lbi'); ?>
+ </div>
+</div>
 
 <div class="blank"></div>
 <div class="block">

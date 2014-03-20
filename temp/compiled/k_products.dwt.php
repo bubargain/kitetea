@@ -4,11 +4,12 @@
 <meta name="Generator" content="ECSHOP v2.7.3" />
 <meta charset="utf-8">
 <link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
-<title>KITE AUTO BLEND TEA - your own script!</title>
+<title>KITE AUTO-BLEND TEA - your own script!</title>
 <meta name="Keywords" content="<?php echo $this->_var['keywords']; ?>" />
 <meta name="Description" content="<?php echo $this->_var['description']; ?>" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $this->_var['ecs_css_path']; ?>/products.css" rel="stylesheet" type="text/css" 
+<link href="<?php echo $this->_var['ecs_css_path']; ?>/products.css" rel="stylesheet" type="text/css"  />
+<?php echo $this->smarty_insert_scripts(array('files'=>'common.js')); ?>
 </head>
 
 <body>
@@ -20,6 +21,7 @@
         <div id="content">
         	<div class="hr2"></div>
             <div class="con_div products_div">
+         
             	<div class="products_btndiv">
                 	<h2>- 1. Choose popular recipe or blend by yourself -</h2>
                 	<div><a href="javascript:void(0)" class="btn products_btn1">START DIY</a>
@@ -128,19 +130,19 @@
                     </p>
                 </div>
                 <div class="products_div2">
-               		<div class="btn_div enroll"><a href="javascript:void(0)" class="btn">ADD TO CART</a></div>
+               		<div class="btn_div"><a href="javascript:addToCart(2);" class="btn">ADD TO CART</a></div>
                 </div>
             </div>
+         
         </div>
         
         
         
         
         
-        <?php echo $this->fetch('library/page_footer.lbi'); ?>
-    	
     </div>
-	<?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,kite_common.js,scale.js')); ?>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<?php echo $this->smarty_insert_scripts(array('files'=>'kite_common.js,scale.js,scroll.js')); ?>
     <script type="text/javascript">
 		var tea=[["<?php echo $this->_var['ecs_img_path']; ?>/gh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mdx.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mlh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
 		new scale('btn1','bar1','title1');
@@ -182,8 +184,12 @@
 		   $("#layer_div").fadeOut();
 		}
 	}) 
+	
+	
     </script>
     
+        <?php echo $this->fetch('library/page_footer.lbi'); ?>
+    	
      
     <div id="layer_bg"></div>
     <div id="layer_div">

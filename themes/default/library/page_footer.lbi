@@ -31,3 +31,21 @@
         </div>
     	<!-- 尾部结束 -->
 </div>
+
+ <script type="text/javascript">
+       $(document).ready(function() {
+			var nav = $('#header nav'),
+			navLine = $('.nav-line');
+			var curPosL = $('#header nav a').position().left+30;
+			var curW = $('#header nav a:first span').outerWidth(true);
+			navLine.css({'width':curW,'left':curPosL});
+			$('#header nav a').not(":eq(3)").hover(function(){
+				var posL = $(this).position().left+30,
+				w = $(this).find("span").outerWidth(true);
+				navLine.animate({'width':w,'left':posL},250);
+			});
+			$(".topics_img").height($(".topics_img_box img").height());
+			$(".topics_img_box").height($(".topics_img_box img").height());
+            img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
+        });
+    </script>
