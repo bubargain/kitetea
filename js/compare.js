@@ -117,7 +117,7 @@ Compare = {
     if (this.compareList.childNodes.length > 0)
     {
       this.compareBox.style.display = "";
-      this.timer = window.setInterval(this.relocation.bind(this), 50);
+     this.timer = window.setInterval(this.bind(this.relocation,this), 50);
     }
     else
     {
@@ -132,5 +132,9 @@ Compare = {
     date.setTime(date.getTime() + 99999999);
     document.setCookie("compareItems", this.data.toJSONString());
   },
+  bind : function(obj1,obj2) { 
+return function() { 
+obj1.apply(obj2, arguments); } 
+},
   lastScrollY : 0
 }

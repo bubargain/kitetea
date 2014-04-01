@@ -30,9 +30,8 @@
         </div>
     	
 </div>
-
- <script type="text/javascript">
-       $(document).ready(function() {
+<script type="text/javascript">
+        $(document).ready(function() {
 			var nav = $('#header nav'),
 			navLine = $('.nav-line');
 			var curPosL = $('#header nav a').position().left+30;
@@ -43,8 +42,17 @@
 				w = $(this).find("span").outerWidth(true);
 				navLine.animate({'width':w,'left':posL},250);
 			});
-			$(".topics_img").height($(".topics_img_box img").height());
-			$(".topics_img_box").height($(".topics_img_box img").height());
             img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
         });
+		jQuery.fn.LoadImage=function(scaling,loadpic){ 
+			return this.each(function(){ 
+				var t=$(this); 
+				var src=$(this).attr("src");
+				var img=new Image(); 
+				img.src=src; 
+				$(".topics_img").height($(this).height());
+				$(".topics_img_box").height($(this).height());
+			}); 
+		}
+		$(".topics_img_box img").LoadImage(true);
     </script>

@@ -11,8 +11,9 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->_var['ecs_css_path']; ?>/../style.css" rel="stylesheet" type="text/css" />
 
-<?php echo $this->smarty_insert_scripts(array('files'=>'common.js,shopping_flow.js')); ?>
+<?php echo $this->smarty_insert_scripts(array('files'=>'common.js,shopping_flow.js,jquery-1.7.2.min.js,kite_common.js,scale.js,scroll.js')); ?>
 </head>
 <body>
 <div style="height:160px">
@@ -47,13 +48,11 @@
       <?php if ($this->_var['show_goods_attribute'] == 1): ?>
               <th bgcolor="#ffffff"><?php echo $this->_var['lang']['goods_attr']; ?></th>
               <?php endif; ?>
-              <?php if ($this->_var['show_marketprice']): ?>
-              <th bgcolor="#ffffff"><?php echo $this->_var['lang']['market_prices']; ?></th>
-              <?php endif; ?>
-              <th bgcolor="#ffffff"><?php echo $this->_var['lang']['shop_prices']; ?></th>
+               
+          
               <th bgcolor="#ffffff"><?php echo $this->_var['lang']['number']; ?></th>
-              <th bgcolor="#ffffff"><?php echo $this->_var['lang']['subtotal']; ?></th>
-              <th bgcolor="#ffffff"><?php echo $this->_var['lang']['handle']; ?></th>
+             
+             
             </tr>
             <?php $_from = $this->_var['goods_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods');if (count($_from)):
     foreach ($_from AS $this->_var['goods']):
@@ -91,26 +90,20 @@
               <?php if ($this->_var['show_goods_attribute'] == 1): ?>
               <td bgcolor="#ffffff"><?php echo nl2br($this->_var['goods']['goods_attr']); ?></td>
               <?php endif; ?>
-              <?php if ($this->_var['show_marketprice']): ?>
-              <td align="right" bgcolor="#ffffff"><?php echo $this->_var['goods']['market_price']; ?></td>
-              <?php endif; ?>
-              <td align="right" bgcolor="#ffffff"><?php echo $this->_var['goods']['goods_price']; ?></td>
+           
               <td align="right" bgcolor="#ffffff">
                 <?php if ($this->_var['goods']['goods_id'] > 0 && $this->_var['goods']['is_gift'] == 0 && $this->_var['goods']['parent_id'] == 0): ?>
                 <input type="text" name="goods_number[<?php echo $this->_var['goods']['rec_id']; ?>]" id="goods_number_<?php echo $this->_var['goods']['rec_id']; ?>" value="<?php echo $this->_var['goods']['goods_number']; ?>" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)"/>
                 <?php else: ?>
-                <?php echo $this->_var['goods']['goods_number']; ?>
+                LEVEL <?php echo $this->_var['goods']['goods_number']; ?>
                 <?php endif; ?>
               </td>
-              <td align="right" bgcolor="#ffffff"><?php echo $this->_var['goods']['subtotal']; ?></td>
-              <td align="center" bgcolor="#ffffff">
-                <a href="javascript:if (confirm('<?php echo $this->_var['lang']['drop_goods_confirm']; ?>')) location.href='flow.php?step=drop_goods&amp;id=<?php echo $this->_var['goods']['rec_id']; ?>'; " class="f6"><?php echo $this->_var['lang']['drop']; ?></a>
-                <?php if ($_SESSION['user_id'] > 0 && $this->_var['goods']['extension_code'] != 'package_buy'): ?>
-                <a href="javascript:if (confirm('<?php echo $this->_var['lang']['drop_goods_confirm']; ?>')) location.href='flow.php?step=drop_to_collect&amp;id=<?php echo $this->_var['goods']['rec_id']; ?>'; " class="f6"><?php echo $this->_var['lang']['drop_to_collect']; ?></a>
-                <?php endif; ?>            </td>
+             
+           
             </tr>
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
           </table>
+          
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <td bgcolor="#ffffff">
@@ -118,16 +111,19 @@
               <?php echo $this->_var['shopping_money']; ?><?php if ($this->_var['show_marketprice']): ?>，<?php echo $this->_var['market_price_desc']; ?><?php endif; ?>
               </td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="<?php echo $this->_var['lang']['clear_cart']; ?>" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" />
+               
                 <input name="submit" type="submit" class="bnt_blue_1" value="<?php echo $this->_var['lang']['update_cart']; ?>" />
               </td>
             </tr>
           </table>
+          
           <input type="hidden" name="step" value="update_cart" />
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tr>
-            <td bgcolor="#ffffff"><a href="./"><img src="themes/default/images/continue.gif" alt="continue" /></a></td>
+            <td bgcolor="#ffffff">
+            <!--<a href="./"><img src="themes/default/images/continue.gif" alt="continue" /></a>-->
+            </td>
             <td bgcolor="#ffffff" align="right"><a href="flow.php?step=checkout"><img src="themes/default/images/checkout.gif" alt="checkout" /></a></td>
           </tr>
         </table>
@@ -803,7 +799,7 @@
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <td width="50%" valign="top" bgcolor="#ffffff">
-            <h6><span>用户登录：</span></h6>
+            <h6><span>Are You a KITER?</span></h6>
             <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
                 <table width="90%" border="0" cellpadding="8" cellspacing="1" bgcolor="#B0D8FF" class="table">
                   <tr>
@@ -822,64 +818,30 @@
                   </tr>
                   <?php endif; ?>
                   <tr>
-            <td colspan="2"  bgcolor="#ffffff"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember"><?php echo $this->_var['lang']['remember']; ?></label></td>
+            <td colspan="2"  bgcolor="#ffffff"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember"><?php echo $this->_var['lang']['remember']; ?></label>&nbsp;&nbsp;<!--<a href="user.php?act=get_password" class="f6"><?php echo $this->_var['lang']['get_password_by_mail']; ?></a> --></td>
           </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" colspan="2" align="center"><a href="user.php?act=qpassword_name" class="f6"><?php echo $this->_var['lang']['get_password_by_question']; ?></a>&nbsp;&nbsp;&nbsp;<a href="user.php?act=get_password" class="f6"><?php echo $this->_var['lang']['get_password_by_mail']; ?></a></td>
-                  </tr>
+                 
                   <tr>
                     <td bgcolor="#ffffff" colspan="2"><div align="center">
                         <input type="submit" class="bnt_blue" name="login" value="<?php echo $this->_var['lang']['forthwith_login']; ?>" />
-                        <?php if ($this->_var['anonymous_buy'] == 1): ?>
-                        <input type="button" class="bnt_blue_2" value="<?php echo $this->_var['lang']['direct_shopping']; ?>" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
-                        <?php endif; ?>
+                       
                         <input name="act" type="hidden" value="signin" />
                       </div></td>
                   </tr>
                 </table>
+                
+                   <h6><span>New Customer：</span></h6>
+                   <div  align="center">
+                       <?php if ($this->_var['anonymous_buy'] == 1): ?>
+                        <input type="button" class="bnt_blue_2" value="<?php echo $this->_var['lang']['direct_shopping']; ?>" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
+                        <br/>
+                        <?php endif; ?>
+                    </div>
+                    <br/>
               </form>
 
               </td>
-            <td valign="top" bgcolor="#ffffff">
-            <h6><span>用户注册：</span></h6>
-            <form action="flow.php?step=login" method="post" name="formUser" id="registerForm" onsubmit="return checkSignupForm(this)">
-               <table width="98%" border="0" cellpadding="8" cellspacing="1" bgcolor="#B0D8FF" class="table">
-                  <tr>
-                    <td bgcolor="#ffffff" align="right" width="25%"><strong><?php echo $this->_var['lang']['username']; ?></strong></td>
-                    <td bgcolor="#ffffff"><input name="username" type="text" class="inputBg" id="username" onblur="is_registered(this.value);" /><br />
-            <span id="username_notice" style="color:#FF0000"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong><?php echo $this->_var['lang']['email_address']; ?></strong></td>
-                    <td bgcolor="#ffffff"><input name="email" type="text" class="inputBg" id="email" onblur="checkEmail(this.value);" /><br />
-            <span id="email_notice" style="color:#FF0000"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong><?php echo $this->_var['lang']['password']; ?></strong></td>
-                    <td bgcolor="#ffffff"><input name="password" class="inputBg" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" /><br />
-            <span style="color:#FF0000" id="password_notice"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong><?php echo $this->_var['lang']['confirm_password']; ?></strong></td>
-                    <td bgcolor="#ffffff"><input name="confirm_password" class="inputBg" type="password" id="confirm_password" onblur="check_conform_password(this.value);" /><br />
-            <span style="color:#FF0000" id="conform_password_notice"></span></td>
-                  </tr>
-                  <?php if ($this->_var['enabled_register_captcha']): ?>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong><?php echo $this->_var['lang']['comment_captcha']; ?>:</strong></td>
-                    <td bgcolor="#ffffff"><input type="text" size="8" name="captcha" class="inputBg" />
-                    <img src="captcha.php?<?php echo $this->_var['rand']; ?>" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
-                  </tr>
-                  <?php endif; ?>
-                  <tr>
-                    <td colspan="2" bgcolor="#ffffff" align="center">
-                        <input type="submit" name="Submit" class="bnt_blue_1" value="<?php echo $this->_var['lang']['forthwith_register']; ?>" />
-                        <input name="act" type="hidden" value="signup" />
-                    </td>
-                  </tr>
-                </table>
-              </form>
-              </td>
+            
           </tr>
           <?php if ($this->_var['need_rechoose_gift']): ?>
           <tr>

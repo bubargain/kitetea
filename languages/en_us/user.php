@@ -374,8 +374,8 @@ $_LANG['virtual_card_info'] = 'Virtual card infomation';
 /* 取回密码 */
 $_LANG['back_home_lnk'] = 'Return to HOME page.';
 $_LANG['get_password_lnk'] = 'Return to get the password page.';
-$_LANG['get_password_by_question'] = 'Fimd back your password by a password question';
-$_LANG['get_password_by_mail'] = 'Fimd back your password by Email';
+$_LANG['get_password_by_question'] = 'Find back your password by a password question';
+$_LANG['get_password_by_mail'] = 'Reset your password by Email';
 $_LANG['back_retry_answer'] = 'back and retry';
 
 /* 登录 注册 */

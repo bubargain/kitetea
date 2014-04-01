@@ -10,7 +10,7 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="<?php echo $this->_var['ecs_css_path']; ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->_var['ecs_css_path']; ?>/style2.css" rel="stylesheet" type="text/css" />
 
 <?php echo $this->smarty_insert_scripts(array('files'=>'common.js,user.js,transport.js')); ?>
 

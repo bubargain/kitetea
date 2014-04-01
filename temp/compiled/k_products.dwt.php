@@ -9,7 +9,40 @@
 <meta name="Description" content="<?php echo $this->_var['description']; ?>" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/style.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>/products.css" rel="stylesheet" type="text/css"  />
-<?php echo $this->smarty_insert_scripts(array('files'=>'common.js')); ?>
+ <?php echo $this->smarty_insert_scripts(array('files'=>'scale.js,scroll.js')); ?>
+  <script type="text/javascript">
+		function setTeaId(goodsId)
+		{
+			$('#tea_id').val(goodsId);
+		}
+		
+		function doSubmit()
+		{
+				if($('#tea_id').val())
+				{
+				
+					Ajax.call('flow.php?step=clear', null , null , 'POST', 'JSON');
+					
+					var teaId= $('#tea_id').val();
+					addToCart(teaId);
+					<?php $_from = $this->_var['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'onegoods');if (count($_from)):
+    foreach ($_from AS $this->_var['onegoods']):
+?>
+					
+      				  <?php if ($this->_var['onegoods']['brand_id'] == 1): ?>
+					   if(parseInt($('#ingre<?php echo $this->_var['onegoods']['goods_id']; ?>').html()) >10)
+							addToCart(<?php echo $this->_var['onegoods']['goods_id']; ?>,0,parseInt($('#ingre<?php echo $this->_var['onegoods']['goods_id']; ?>').html())/10);
+					  <?php endif; ?>
+					<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+					
+				}
+				else
+				{
+					alert('You havnt choosed yet!');
+				}
+			
+		}
+		</script>
 </head>
 
 <body>
@@ -25,42 +58,33 @@
             	<div class="products_btndiv">
                 	<h2>- 1. Choose popular recipe or blend by yourself -</h2>
                 	<div><a href="javascript:void(0)" class="btn products_btn1">START DIY</a>
-                    Or
+                    or
                     <a href="javascript:void(0)" class="btn products_btn2">EARL GREY</a><a href="javascript:void(0)" class="btn  products_btn3">Daniel's </a><a href="javascript:void(0)" class="btn  products_btn4">Callie's</a><a href="javascript:void(0)" class="btn  products_btn5">Andrey's</a></div>
                 </div>
                 <div class="featured products_div3">
                 	<h2>- 2. Choose category of tea you like -</h2>
+                    <input type="hidden" name="tea_id" id="tea_id" />
                     <section class="grid">
-                        <div class="col">
-                            <a href="javascript:void(0)">
-                                <img src="themes/default/images/t_black.jpg" width="240" height="240">
-                                <div class="color_div"><span class="color1"></span></div>
-                                <h3>BLACK TEA</h3>
+                       <?php $_from = $this->_var['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'onegoods');if (count($_from)):
+    foreach ($_from AS $this->_var['onegoods']):
+?>
+      					<?php if ($this->_var['onegoods']['brand_id'] == 2): ?>
+                    
+                    
+                        <div class="col" >
+                            <a href="javascript:void(0)" onClick="setTeaId(<?php echo $this->_var['onegoods']['goods_id']; ?>)">
+                                <img src="<?php echo $this->_var['onegoods']['goods_img']; ?>" width="240" height="240">
+                                <div class="color_div"><span class="color<?php echo $this->_var['onegoods']['goods_id']; ?>"></span></div>
+                                <h3><?php echo $this->_var['onegoods']['goods_name']; ?></h3>
                             </a>
-                             <p style="font-size:13px">Ingredients: <br/>Keemun Black Tea and Lapsong SouChong Black Tea </p>
+                             <div style="font-size:14px">Ingredients:<br/><?php echo $this->_var['onegoods']['goods_desc']; ?></div>
                         </div>
-                        <div class="col">
-                            <a href="javascript:void(0)">
-                                <img src="themes/default/images/t_green.jpg" width="240" height="240">
-                                <div class="color_div"><span class="color2"></span></div>
-                                <h3>GREEN TEA</h3>    
-                             </a>
-                             <p style="font-size:13px">Ingredients: <br/>
-                             	West Lake Dragon Well Green Tea
-                             </p> 
-                        </div>
-                        <div class="col">
-                            <a href="javascript:void(0)">
-                                <img src="themes/default/images/t_puer.jpg" width="240" height="240">
-                                <div class="color_div"><span class="color3"></span></div>
-                                <h3>PU'ER TEA</h3>
-                            </a>
-                            <p style="font-size:13px">Ingredients: <br/>
-                             	YunNan Premium Loose Pu'er Tea
-                             </p> 
-                        </div>
-                        <div class="col col_last">
-                            <a href="javascript:void(0)">
+                        <?php endif; ?>
+                       <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                       
+                        
+                       <!-- <div class="col col_last" >
+                            <a href="javascript:void(0)" onClick="setTeaId(4)">
                                 <img src="themes/default/images/t_white.jpg" width="240" height="240">
                                 <div class="color_div"><span class="color4"></span></div>
                                 <h3>WHITE TEA</h3>
@@ -68,53 +92,43 @@
                             <p style="font-size:13px">Ingredients: <br/>
                              	Anji White Tea
                              </p> 
-                        </div>
+                        </div> -->
+                      
                     </section>
                 </div>
                 <div class="products_div4">
                     <h2>- 3. Enhance flavor and aroma -</h2>
+                   
+                    
                     <div class="products_tea con_div">
                     	<div class="l products_teal">
+                        
+                         <?php $_from = $this->_var['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'onegoods');if (count($_from)):
+    foreach ($_from AS $this->_var['onegoods']):
+?>
+      						<?php if ($this->_var['onegoods']['brand_id'] == 1): ?>
+                    
                         	<div class="products_teadiv">
-                            	<h3 class="l"><a href="javascript:void(0)">Osmanthus</a></h3>
+                            	<h3 class="l"><a href="javascript:void(0)"><?php echo $this->_var['onegoods']['goods_name']; ?></a></h3>
                             	<div class="l">
-                                    <span id="title1" style="display:none">100</span>
-                                    <div class="scale" id="bar1">
+                          
+                                    <span id="ingre<?php echo $this->_var['onegoods']['goods_id']; ?>" style="display:none">1</span>
+                                    <div class="scale" id="bar<?php echo $this->_var['onegoods']['goods_id']; ?>">
                                     	<div></div>
-                                        <span id="btn1"></span>
+                                        <span id="btn<?php echo $this->_var['onegoods']['goods_id']; ?>"></span>
                                     </div> 
                                 </div>
                             </div>
-                            <div class="products_teadiv">
-                            	<h3 class="l"><a href="javascript:void(0)">Rosemary</a></h3>
-                            	<div class="l">
-                                    <span id="title2" style="display:none">40</span>
-                                    <div class="scale" id="bar2">
-                                    	<div></div>
-                                        <span id="btn2"></span>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="products_teadiv">
-                            	<h3 class="l"><a href="javascript:void(0)">Jasmine</a></h3>
-                            	<div class="l">
-                                    <span id="title3" style="display:none">30</span>
-                                    <div class="scale" id="bar3">
-                                    	<div></div>
-                                        <span id="btn3"></span>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="products_teadiv">
-                            	<h3 class="l"><a href="javascript:void(0)">lavender</a></h3>
-                            	<div class="l">
-                                    <span id="title4" style="display:none">20</span>
-                                    <div class="scale" id="bar4">
-                                    	<div></div>
-                                        <span id="btn4"></span>
-                                    </div> 
-                                </div>
-                            </div>
+                           <script type="text/javascript">
+						   	new scale('btn<?php echo $this->_var['onegoods']['goods_id']; ?>','bar<?php echo $this->_var['onegoods']['goods_id']; ?>','ingre<?php echo $this->_var['onegoods']['goods_id']; ?>');
+						   </script> 
+                            
+                       <?php endif; ?>
+                       <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                             
+                             
+                     
+                           
                         </div>
                         <div class="l products_tear">
                         	<img src="themes/default/images/tea.jpg" width="285" height="189" class="l">
@@ -130,25 +144,22 @@
                     </p>
                 </div>
                 <div class="products_div2">
-               		<div class="btn_div"><a href="javascript:addToCart(2);" class="btn">ADD TO CART</a></div>
+               		<div class="btn_div"><a href="javascript:doSubmit();" class="btn">ADD TO CART</a></div>
                 </div>
             </div>
          
         </div>
-        
+       
         
         
         
         
     </div>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<?php echo $this->smarty_insert_scripts(array('files'=>'kite_common.js,scale.js,scroll.js')); ?>
+    <?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,common.js,kite_common.js')); ?>
+    <?php echo $this->smarty_insert_scripts(array('files'=>'transport.js')); ?>
     <script type="text/javascript">
 		var tea=[["<?php echo $this->_var['ecs_img_path']; ?>/gh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mdx.jpg","<?php echo $this->_var['ecs_img_path']; ?>/mlh.jpg","<?php echo $this->_var['ecs_img_path']; ?>/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
-		new scale('btn1','bar1','title1');
-		new scale('btn2','bar2','title2');
-		new scale('btn3','bar3','title3');
-		new scale('btn4','bar4','title4');
+
 		var q_a=null;
 		$(".products_btndiv a").click(function(){
 			$(".products_div3").slideDown(1000);
@@ -168,6 +179,7 @@
 		});	
 		$(".products_teadiv a").hover(function(){
 			var num=$(this).parent().parent().index();
+		
 			$(".products_tear img").attr("src",tea[0][num]);	
 			$(".products_tear p").html(tea[1][num]);	
 		});

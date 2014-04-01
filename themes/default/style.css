@@ -13,11 +13,9 @@ Template Type: type_0
 /* ====================
      公共样式
 ==================== */
-body{background:#fff; font-size:12px; font-family:"宋体",Verdana, Arial; line-height:150%; margin:5px 0 0 0; padding:0; color:#404040;}
+
 div{margin:0 auto; padding:0;}
-h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{
-margin:0; padding:0; border:none; list-style-type:none;
-}
+
 .block{
   width:960px; height:auto;
 }
@@ -85,7 +83,7 @@ visibility:hidden;
   }
   .boxCenterList{padding:8px;}
   /*模块标题*/
-  h3{height:33px; line-height:33px; font-size:12px; background:url(images/h3title.gif) repeat-x left top; text-align:right;
+  
   padding:0 12px; font-weight:100;
   }
   h3.border{border:1px solid #c5e4ff; border-bottom:none;}
@@ -422,17 +420,7 @@ visibility:hidden;
    .pagebar .page_now{display:block; float:left; margin:0 5px; color:#ff5a6a; font-weight:bold; background:#fff;}
    #pager a{color:#0066cc; text-decoration:none;}
 
-   /*底部导航+友情链接*/
-   #bottomNav{width:958px;}
-   .bNavList{border:1px solid #fff; background:#eef6f9; height:27px; line-height:27px; padding:0 12px;}
-   .links{border:1px solid #fff; background:#eef6f9; padding:0 12px;}
-   .bNavList a,.links a{color:#006acd; text-decoration:none;}
-   .bNavList img{_position:relative; top:8px;}
-   .links img{width:88px; height:30px; margin:5px;}
-   /*版权*/
-   #footer{background:url(images/logo1.gif) no-repeat 5% 50%; padding-left:200px; width:760px; margin:10px auto;}
-   #footer .text{background:url(images/footerLine.gif) no-repeat left center; padding-left:50px; *padding-bottom:20px;}
-   #footer .text a{color:#404040; text-decoration:none;}
+
 
 
 /* ======商品比较浮动块 ====== */

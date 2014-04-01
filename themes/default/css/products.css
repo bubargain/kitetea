@@ -5,7 +5,7 @@
 .grid{color:#464646;font-size:24px;overflow:hidden;padding:100px 0 30px 0}
 .grid h3{font-size:24px;padding:5px 0}
 .grid a{color:#464646}
-.col{float:left;width:240px;margin-right:53px}
+.col{float:left;width:192px;margin-right:52px}
 .col_last{margin:0}
 .color_div{padding-top:40px}
 .color_div span{width:20px;height:20px;display:inline-block;border-radius:20px}
@@ -33,7 +33,7 @@
 .products_div2 p{font-size:18px;padding:75px 0 50px 0}
 .scale span{background:#fff;border:2px #f8b551 solid;width:22px;height:22px; position:absolute;cursor:pointer; border-radius:24px;margin-top:-8px}
 .scale span:hover{box-shadow: 0 0 10px #d3d0d0}
-.scale{background:-moz-linear-gradient(left,#ffff06,#ff6e00);background:-webkit-gradient(linear,right bottom,0 100%, from(#ff6e00),to(#ffff06));width:280px;height:11px; position:relative; border-radius:11px}
+.scale{background:url(../images/products_03.jpg) no-repeat;width:280px;height:11px; position:relative}
 .products_tea{padding-top:60px}
 .products_teal a{color:#464646}
 .products_teal h3{font-size:30px;width:240px}

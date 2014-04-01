@@ -4,11 +4,11 @@
 .help_touch h1{font-size:60px}
 .help_touch p{color:#464646}
 .help_touch div{padding-top:20px}
-.help_touch div a{display:inline-block;color:#eba568;padding:65px 20px 0 20px}
+.help_touch div a{display:inline-block;color:#eba568;padding:60px 20px 5px 20px;font-weight:bold}
 .help_touch div a:hover{color:#f8b551}
-.help_touch div .help_email{background:url(../images/help_10.jpg) no-repeat center 23px}
+.help_touch div .help_email{background:url(../images/help_10.jpg) no-repeat center 18px}
 .help_touch div .help_email:hover{background-image:url(../images/help_08.jpg)}
-.help_touch div .help_tel{background:url(../images/help_03.jpg) no-repeat center 15px;border-left:1px #eba568 dashed}
+.help_touch div .help_tel{background:url(../images/help_03.jpg) no-repeat center 10px;border-left:1px #eba568 dashed}
 .help_touch div .help_tel:hover{background-image:url(../images/help_05.jpg)}
 .help_menu{font-size:18px;text-align:center;padding:30px 0 0 0;background:#fff;width:100%;left:0;top:0}
 .help_con{text-align:center;font-size:18px;color:#464646}

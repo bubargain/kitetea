@@ -116,7 +116,7 @@ $err = new ecs_error('message.dwt');
 /* 载入系统参数 */
 $_CFG = load_config();
  
-$_CFG['lang']= "zh_cn";
+//$_CFG['lang']= "zh_cn";
 
 /* 载入语言文件 */
 require(ROOT_PATH . 'languages/' . $_CFG['lang'] . '/common.php');

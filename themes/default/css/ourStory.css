@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
+.ousStory_banner{position:relative}
 .ousStory_banner img{display:block}
 .ousStory_div1,.ousStory_div3{padding:50px 0;overflow:hidden;clear:both}
 .ousStory{text-align:center;min-width:1120px}
@@ -12,10 +13,10 @@
 .ousStory_div3 div.l{width:30%;height:434px;background:url(../images/ourStory_10.jpg) no-repeat center;background-size:auto 434px}
 .ousStory_div3 div.r{width:64%;padding:60px 3% 0 3%;height:434px}
 .ousStory_div4{font-size:24px;border-top:1px #959595 dashed;padding-top:45px;line-height:44px}
-.ousStory_font{font-size:48px;color:#fff;font-family:Vijaya;width:400px;position:absolute;top:45%;right:12%;text-align:left; text-shadow:2px 2px 2px #535353;line-height:50px}
-.shave_font{width:515px;height:140px;text-align:center;border:2px solid rgba(255,255,255,0.6);padding-top:20px;right:35%}
+.ousStory_font{font-size:48px;color:#fff;font-family:Vijaya;width:400px;position:absolute;top:33%;right:12%;text-align:left; text-shadow:2px 2px 2px #535353;line-height:50px}
+.shave_font{width:515px;height:140px;text-align:center;border:2px solid rgba(255,255,255,0.6);padding-top:20px;right:31%;top:35%}
 .shave h1{font-size:30px;margin:80px 0}
-.shave h2{font-size:36px;text-align:center;text-transform:none;margin:20% 0 3% 0}
+.shave h2{font-size:36px;text-align:center;margin:20% 0 3% 0}
 .shave div.shave_div{width:40%;padding:0;background:#f7f7f7;padding:0 5%}
-.shave div.shave_img{width:50%}
+.shave div.shave_img{width:50%;background:none}
 .ousStory_div3{padding-top:100px}

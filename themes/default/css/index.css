@@ -1,13 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 /************页面正文样式******/
-.topics_img{width:100%;height:518px}
-.topics_img_box{height:518px}
-.topics_img_box a{width:100%;position:absolute;}
+.topics_imgbg{background:url(../images/home_03.png) repeat-x;height:14px;margin-bottom:-14px;z-index:9999;position:relative}
+.topics_img{width:100%}
+.topics_img_box{}
+.topics_img_box a{width:100%;position:absolute}
 .topics_img_icon{position:relative;margin:-3% 0 0 0;text-align:center}
 .topics_img_icon a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
 .topics_img_icon .icon_a{background:#c4161c}
-.topics_img .prev,.topics_img .next{width:30px;height:58px;top:40%;position:absolute;z-index:998}
+.topics_img .prev,.topics_img .next{width:30px;height:58px;top:300px;position:absolute;z-index:998}
 .topics_img .prev{background:url(../images/left1.png);left:5%}
 .topics_img .next{background:url(../images/right1.png);right:5%}
 .topics_img .prev:hover{background:url(../images/left.png);width:35px;height:63px}

@@ -46,9 +46,10 @@ Applying to modern life, the fast-paced environment often pushes stresses on you
         </div>
         
         
-        <?php echo $this->fetch('library/page_footer.lbi'); ?>
-    	
     </div>
 	<?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.7.2.min.js,kite_common.js')); ?>
+    
+        <?php echo $this->fetch('library/page_footer.lbi'); ?>
+    	
 </body>
 </html>

@@ -349,7 +349,7 @@ var Transport =
     {
       try
       {
-        legalParams = "JSON=" + params.toJSONString();
+        legalParams = "JSON=" + objToJSONString(params);
       }
       catch (ex)
       {
@@ -405,7 +405,7 @@ var Transport =
         result = this.preFilter(xhr.responseText);
         try
         {
-          result = result.parseJSON();
+          result = parseObjectToJSON(result);
         }
         catch (ex)
         {
@@ -494,6 +494,8 @@ Ajax.call = Transport.run;
 
 // Augment the basic prototypes if they have not already been augmented.
 
+// 注释掉496-737 以兼容jquery by daniel
+/*
 if ( ! Object.prototype.toJSONString) {
     Array.prototype.toJSONString = function () {
         var a = ['['], // The array holding the text fragments.
@@ -734,7 +736,7 @@ if ( ! Object.prototype.toJSONString) {
         };
     })(String.prototype);
 }
-
+*/
 Ajax.onRunning  = showLoader;
 Ajax.onComplete = hideLoader;
 
@@ -787,4 +789,12 @@ function hideLoader()
     catch (ex)
     {}
   }
+}
+
+function objToJSONString(obj, filter){
+return JSON.stringify(obj, filter);
+}
+
+function parseObjectToJSON(object, filter){
+return JSON.parse(object, filter);
 }

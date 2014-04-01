@@ -21,22 +21,7 @@ if ((DEBUG_MODE & 2) != 2)
 {
     $smarty->caching = true;
 }
-$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 
-$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
-
-if(($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap'))
-{
-    $Loaction = 'mobile/';
-
-    if (!empty($Loaction))
-    {
-        ecs_header("Location: $Loaction\n");
-
-        exit;
-    }
-
-}
 /*------------------------------------------------------ */
 //-- Shopex系统地址转换
 /*------------------------------------------------------ */
@@ -107,8 +92,12 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('keywords',        htmlspecialchars($_CFG['shop_keywords']));
     $smarty->assign('description',     htmlspecialchars($_CFG['shop_desc']));
     $smarty->assign('currentPage','products');
-
-
+	
+	//获得Tea列表
+	$sql = "SELECT goods_name,goods_id,brand_id,goods_img,goods_desc FROM " . $ecs->table('goods') ;
+	$goods = $GLOBALS['db']->getAll($sql);
+	
+	$smarty->assign('goods',$goods);
 }
 
 $smarty->display('k_products.dwt', $cache_id);

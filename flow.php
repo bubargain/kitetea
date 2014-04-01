@@ -186,6 +186,12 @@ elseif ($_REQUEST['step'] == 'link_buy')
     ecs_header("Location:./flow.php\n");
     exit;
 }
+elseif($_REQUEST['step'] == 'fblogin')
+{
+	
+}
+
+
 elseif ($_REQUEST['step'] == 'login')
 {
     include_once('languages/'. $_CFG['lang']. '/user.php');

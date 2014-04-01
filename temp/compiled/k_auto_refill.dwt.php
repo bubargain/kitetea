@@ -112,7 +112,7 @@
         </div>
         
         
-         <?php echo $this->fetch('library/page_footer.lbi'); ?>
+        
     	
     </div>
     
@@ -188,6 +188,6 @@
 		}
 	}) 
 </script>
- 
+  <?php echo $this->fetch('library/page_footer.lbi'); ?>
 </body>
 </html>

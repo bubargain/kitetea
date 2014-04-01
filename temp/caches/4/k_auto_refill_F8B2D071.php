@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:48:"F:/website/kite/themes/default/k_auto_refill.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395070590;s:8:"maketime";i:1395066990;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:48:"F:/website/kite/themes/default/k_auto_refill.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395725395;s:8:"maketime";i:1395721795;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -16,14 +16,15 @@
           
         <div id="header">
         	<nav>
-                <a href="products.php" id="link_products" >Products</a>
-                <a href="auto_refill.php" id="link_autorefill" >Auto-Refill</a>
-                <a href="ourstory.php" id="link_ourstory">Our Story</a>
+                <a href="products.php" id="link_products" ><span>Products</span></a>
+                <a href="auto_refill.php" id="link_autorefill" ><span>Auto-Refill</span></a>
+                <a href="ourstory.php" id="link_ourstory"><span>Our Story</span></a>
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
-                <a href="charity.php" id="link_charity">Alleviate Poverty</a>
-                <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="help.php" id="link_help">Help</a>
+                <a href="charity.php" id="link_charity"><span>Alleviate Poverty</span></a>
+                <a href="http://localhost/wp" id="link_magazine"><span>Magazine</span></a>
+                <a href="help.php" id="link_help"><span>Help</span></a>
             </nav>
+            <div class="nav-line"></div>
             <input type="hidden" id="hpage" value="autorefill" />
         </div>
        
@@ -123,38 +124,8 @@
         </div>
         
         
-         
- 
-        <div id="footer">
-        	<div class="con_div footer_div">
-            	<div class="l footer_prod">
-                	<h3>PRODUCTS</h3>
-                    <a href="products.php">Our Tea</a>
-                   
-                </div>
-                <div class="l footer_expl">
-                	<h3>EXPLORE</h3>
-                    <a href="javascript:void(0)">Our Story</a>
-                    <a href="javascript:void(0)">Help Farmers</a>
-                    <a href="javascript:void(0)">Magazine</a>
-                </div>
-                <div class="l footer_mail">
-                	<h3>We love hearing from you</h3>
-                    <span> contact@KiteTea.com</span>
-                </div>
-                <div class="l friends">
-                	<h3>Let's be friends</h3>
-                    <p><a href="javascript:void(0)"><img src="themes/default/images/index_23.jpg" width="52" height="54"></a><a href="javascript:void(0)"><img src="themes/default/images/index_25.jpg" width="52" height="54"></a></p>
-                </div>
-            </div>
-            <div class="hr"></div>
-            <div class="footer_usa">
-            	<span class="l">© KiteTea. All Rights Reserved. 2012 - 2014 </span>
-                <span class="r">京ICP备13021991号-2,CHINA</span>
-            </div>
-        </div>
+        
     	
-</div>    	
     </div>
     
      
@@ -228,6 +199,63 @@
 		}
 	}) 
 </script>
+  
  
+        <div id="footer">
+        	<div class="con_div footer_div">
+            	<div class="l footer_prod">
+                	<h3>PRODUCTS</h3>
+                    <a href="products.php">Our Tea</a>
+                   
+                </div>
+                <div class="l footer_expl">
+                	<h3>EXPLORE</h3>
+                    <a href="javascript:void(0)">Our Story</a>
+                    <a href="javascript:void(0)">Help Farmers</a>
+                    <a href="javascript:void(0)">Magazine</a>
+                </div>
+                <div class="l footer_mail">
+                	<h3>We love hearing from you</h3>
+                    <span> contact@KiteTea.com</span>
+                </div>
+                <div class="l friends">
+                	<h3>Let's be friends</h3>
+                    <p><a href="javascript:void(0)"><img src="themes/default/images/index_23.jpg" width="52" height="54"></a><a href="javascript:void(0)"><img src="themes/default/images/index_25.jpg" width="52" height="54"></a></p>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div class="footer_usa">
+            	<span class="l">© KiteTea. All Rights Reserved. 2012 - 2014 </span>
+                <span class="r">京ICP备13021991号-2,CHINA</span>
+            </div>
+        </div>
+    	
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+			var nav = $('#header nav'),
+			navLine = $('.nav-line');
+			var curPosL = $('#header nav a').position().left+30;
+			var curW = $('#header nav a:first span').outerWidth(true);
+			navLine.css({'width':curW,'left':curPosL});
+			$('#header nav a').not(":eq(3)").hover(function(){
+				var posL = $(this).position().left+30,
+				w = $(this).find("span").outerWidth(true);
+				navLine.animate({'width':w,'left':posL},250);
+			});
+            img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
+        });
+		jQuery.fn.LoadImage=function(scaling,loadpic){ 
+			return this.each(function(){ 
+				var t=$(this); 
+				var src=$(this).attr("src");
+				var img=new Image(); 
+				img.src=src; 
+				$(".topics_img").height($(this).height());
+				$(".topics_img_box").height($(this).height());
+			}); 
+		}
+		$(".topics_img_box img").LoadImage(true);
+    </script>
 </body>
 </html>

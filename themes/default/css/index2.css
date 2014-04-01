@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+/************页面正文样式******/
+.topics_img{width:100%;height:518px}
+.topics_img_box{height:518px}
+.topics_img_box a{width:100%;position:absolute;height:518px}
+.topics_img_icon{position:relative;margin:-3% 0 0 0;text-align:center}
+.topics_img_icon a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
+.topics_img_icon .icon_a{background:#c4161c}
+.topics_img .prev,.topics_img .next{width:30px;height:58px;top:40%;position:absolute;z-index:998}
+.topics_img .prev{background:url(../images/left1.png);left:5%}
+.topics_img .next{background:url(../images/right1.png);right:5%}
+.topics_img .prev:hover{background:url(../images/left.png);width:35px;height:63px}
+.topics_img .next:hover{background:url(../images/right.png);width:35px;height:63px}
+.topics_img_box .ererer{background:url(../images/banner_02.jpg) no-repeat center}
+.topics_img_box .canada{background:url(../images/ourStory_02.jpg) no-repeat center}
+.topics_img_box .german_factory{background:url(../images/shave.jpg) no-repeat center}
+.imt_predo{font-size: 48px;color: #fff;font-family: Vijaya;width: 400px;position: absolute;top: 33%;right: 12%;text-align: left;text-shadow: 2px 2px 2px #535353;line-height: 50px;}
+.imt_predo2{color:#000;text-shadow: 1px 1px 1px #514b49;top:42%}
+/*********FEATURED PRODUCTS******/
+.featured{text-align:center}
+.featured h2{font-size:36px;margin:60px 0 40px 0}
+.grid{color:#464646;font-size:24px;overflow:hidden}
+.grid h3{font-size:24px;padding:5px 0}
+.grid a{color:#464646}
+.col{float:left;width:240px;margin-right:53px}
+.col_last{margin:0}
+.color_div{padding-top:40px}
+.color_div span{width:20px;height:20px;display:inline-block;border-radius:20px}
+.color1{background:#f8b551}
+.color2{background:#b3d465}
+.color3{background:#cfa972}
+.color4{background:#dcdcdc}
+.btn_div{border-top:1px #959595 dashed;border-bottom:1px #959595 dashed;padding:45px 0;clear:both;margin-top:40px}
+/*********MORE FROM KITE TEA******/
+.more .col{width:360px;margin-right:13px}
+.more .grid{font-size:30px}
+.more h3{padding-top:50px}
+.more img:hover{opacity:0.6}

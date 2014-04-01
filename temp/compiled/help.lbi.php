@@ -4,10 +4,10 @@
 ?>
 <dl>
   <dt><a href='<?php echo $this->_var['help_cat']['cat_id']; ?>' title="<?php echo $this->_var['help_cat']['cat_name']; ?>"><?php echo $this->_var['help_cat']['cat_name']; ?></a></dt>
-  <?php $_from = $this->_var['help_cat']['article']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item_0_02237200_1395229308');if (count($_from)):
-    foreach ($_from AS $this->_var['item_0_02237200_1395229308']):
+  <?php $_from = $this->_var['help_cat']['article']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item_0_32768300_1395721712');if (count($_from)):
+    foreach ($_from AS $this->_var['item_0_32768300_1395721712']):
 ?>
-  <dd><a href="<?php echo $this->_var['item_0_02237200_1395229308']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['item_0_02237200_1395229308']['title']); ?>"><?php echo $this->_var['item_0_02237200_1395229308']['short_title']; ?></a></dd>
+  <dd><a href="<?php echo $this->_var['item_0_32768300_1395721712']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['item_0_32768300_1395721712']['title']); ?>"><?php echo $this->_var['item_0_32768300_1395721712']['short_title']; ?></a></dd>
   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 </dl>
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>

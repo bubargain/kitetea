@@ -26,7 +26,9 @@ scale.prototype={
 		f.bar.onclick=function(e){
 			var x=((e||b.event).clientX)-(this.offsetLeft);
 			var to=m.min(254,m.max(0,x));
+			var pos=m.round(m.max(0,to/254)*100);
 			f.btn.style.left=to+"px";
+			f.title.innerHTML=pos;
 		}
 	},
 	ondrag:function (pos,x){

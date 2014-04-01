@@ -10,10 +10,11 @@ ul{list-style:none;padding:0;margin:0}
 p,form,select{margin:0;padding:0}
 img{border:0}
 th{font-weight:200}
+em{font-style:normal}
 .l{float:left}
 .r{float:right}
 .con_div{width:1120px;margin:0 auto;overflow:hidden}
-.btn{color:#fff;font-size:24px;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px}
+.btn{color:#fff;font-size:24px;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px;-moz-transition:background 1s ease-in;-webkit-transition:background 1s ease-in;-o-transition:background 1s ease-in;-ms-transition:background 1s ease-in;transition:background 1s ease-in}
 .btn:hover{background:#f39800}
 .hr{ background:linear-gradient(#fff,#d7d5d5);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#d7d5d5));}
 .hr2{ background:linear-gradient(#d7d5d5,#fff);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d5d5), to(#fff))}
@@ -51,6 +52,3 @@ nav .nav_a{color:#c4161c}
 #layer_con em{color:rgba(253,212,31,1)}
 #layer_con p{margin-bottom:18px}
 .layer_align{display: inline-block;vertical-align: middle;height: 100%;}
-
-
-

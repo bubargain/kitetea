@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:41:"F:/website/kite/themes/default/kindex.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1395070587;s:8:"maketime";i:1395066987;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:3:{i:0;s:41:"F:/website/kite/themes/default/kindex.dwt";i:1;s:56:"F:/website/kite/themes/default/library/k_page_header.lbi";i:2;s:54:"F:/website/kite/themes/default/library/page_footer.lbi";}s:7:"expires";i:1396341213;s:8:"maketime";i:1396337613;}<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -19,14 +19,15 @@
         
         <div id="header">
         	<nav>
-                <a href="products.php" id="link_products" >Products</a>
-                <a href="auto_refill.php" id="link_autorefill" >Auto-Refill</a>
-                <a href="ourstory.php" id="link_ourstory">Our Story</a>
+                <a href="products.php" id="link_products" ><span>Products</span></a>
+                <a href="auto_refill.php" id="link_autorefill" ><span>Auto-Refill</span></a>
+                <a href="ourstory.php" id="link_ourstory"><span>Our Story</span></a>
                 <a href="index.php" id="link_index" class="logo"><img src="themes/default/images/index_02.jpg" width="83" height="157"></a>
-                <a href="charity.php" id="link_charity">Alleviate Poverty</a>
-                <a href="http://localhost/wp" id="link_magazine">Magazine</a>
-                <a href="help.php" id="link_help">Help</a>
+                <a href="charity.php" id="link_charity"><span>Alleviate Poverty</span></a>
+                <a href="http://localhost/wp" id="link_magazine"><span>Magazine</span></a>
+                <a href="help.php" id="link_help"><span>Help</span></a>
             </nav>
+            <div class="nav-line"></div>
             <input type="hidden" id="hpage" value="index" />
         </div>
        
@@ -118,7 +119,10 @@
             </div>
         </div>
         
-        
+     
+       
+    
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script><script type="text/javascript" src="js/scroll.js"></script>     
        
  
         <div id="footer">
@@ -150,14 +154,32 @@
             </div>
         </div>
     	
-</div>       
-    
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script><script type="text/javascript" src="js/scroll.js"></script>   <script type="text/javascript">
+</div>
+<script type="text/javascript">
         $(document).ready(function() {
-			$(".topics_img").height($(".topics_img_box img").height());
-			$(".topics_img_box").height($(".topics_img_box img").height());
+			var nav = $('#header nav'),
+			navLine = $('.nav-line');
+			var curPosL = $('#header nav a').position().left+30;
+			var curW = $('#header nav a:first span').outerWidth(true);
+			navLine.css({'width':curW,'left':curPosL});
+			$('#header nav a').not(":eq(3)").hover(function(){
+				var posL = $(this).position().left+30,
+				w = $(this).find("span").outerWidth(true);
+				navLine.animate({'width':w,'left':posL},250);
+			});
             img_hd(".topics_img_box a",".topics_img_icon a","icon_a",".prev",".next");
         });
+		jQuery.fn.LoadImage=function(scaling,loadpic){ 
+			return this.each(function(){ 
+				var t=$(this); 
+				var src=$(this).attr("src");
+				var img=new Image(); 
+				img.src=src; 
+				$(".topics_img").height($(this).height());
+				$(".topics_img_box").height($(this).height());
+			}); 
+		}
+		$(".topics_img_box img").LoadImage(true);
     </script>
 </body>
 </html>
