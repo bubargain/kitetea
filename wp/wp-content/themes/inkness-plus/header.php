@@ -26,19 +26,7 @@
 	<?php do_action( 'before' ); ?>
 	<div id="header-top">
 		<header id="masthead" class="site-header row container" role="banner">
-			<div class="site-branding col-md-6 col-xs-12">
-			<?php if((of_get_option('logo', true) != "") && (of_get_option('logo', true) != 1) ) { ?>
-				<h1 class="site-title logo-container"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php
-				echo "<img class='main_logo' src='".of_get_option('logo', true)."' title='".esc_attr(get_bloginfo( 'name','display' ) )."'></a></h1>";	
-				}
-			else { ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> 
-			<?php	
-			}
-			?>
-			</div>	
-			<?php get_template_part('social', of_get_option('iconset')); ?>			
+					
 		</header><!-- #masthead -->
 	</div>
 	
