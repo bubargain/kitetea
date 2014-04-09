@@ -17,6 +17,11 @@ define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 
+//for 测试
+//if(! $_SESSION['user_id'])  $_SESSION['user_id'] =1;
+
+
+
 if ((DEBUG_MODE & 2) != 2)
 {
     $smarty->caching = true;

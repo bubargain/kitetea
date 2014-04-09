@@ -12,5 +12,120 @@
             <div class="nav-line"></div>
             <input type="hidden" id="hpage" value="{$currentPage}" />
         </div>
+        <!-- {if $smarty.session.user_id > 0} -->
+        <div class="head_top">
+        	<div class="head_topa"><a href="formula.php"></a></div>
+            <div class="head_topa2">
+            	<a href="javascript:void(0)" class="head_topa2_home"></a>
+            	<div>
+                	<a href="javascript:void(0)">Order History</a>
+                    <span></span>
+                    <a href="javascript:void(0)">Subscription Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!--{else}-->
+            <div class="head_top">
+                FB Login
+            </div>
+        <!--{/if}-->
        
 <!-- 顶部结束 -->
+<!-- 弹出层 -->
+
+    <div id="layer_bg"></div>
+
+    <div id="order">
+    	<a href="javascript:void(0)" class="btn close_btn"><img src="images/close_03.png"></a>
+        <table cellpadding="0" cellspacing="0">
+        	<thead>
+            	<tr>
+                	<th width="225">Products</th>
+                    <th width="105">Pages</th>
+                    <th width="160">Dates</th>
+                    <th width="115">Add</th>
+                    <th width="100">Delivery</th>
+                    <th>Order again</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+                <tr>
+                	<td>Product1 name</td>
+                    <td>10</td>
+                    <td>27.03.2014</td>
+                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
+                    <td>xxxx</td>
+                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="plan">
+    	<a href="javascript:void(0)" class="btn close_btn"><img src="images/close_03.png"></a>
+        <form action="">
+        	<div class="plan_div"><label>Initial time :</label><span>27.03.2014</span></div>
+            <div class="plan_div"><label>Frequency :</label><span>10</span></div>
+            <div class="plan_div"><label>Add :</label><span><input type="text" class="plan_text"><a href="javascript:void(0)" class="eit_btn"></a></span></div>
+            <div class="plan_div"><label class="l">Order recipe :</label>
+            	<div class="l select_box">
+                    <span class="select_txt">Amy’s recipe</span>
+                    <div class="option">
+                        <a>Amy’s recipe</a>
+                        <a>Daneil’s recipe</a>
+                    </div>
+                </div>
+            </div>
+            <p><a href="javascript:void(0)" class="btn">SAVE</a></p>
+        </form>
+    </div>
+
+  

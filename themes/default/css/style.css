@@ -3,7 +3,7 @@
 body{margin:0;font:12px Kalinga}
 input,textarea{font:12px Kalinga;padding:0;margin:0}
 input, button, select, textarea{ outline:none; } 
-a{text-decoration:none;color:#000}
+a{text-decoration:none;color:#000;outline:none}
 a:hover{text-decoration:none}
 h1,h2,h3{font-weight:200;font-size:12px;margin:0}
 ul{list-style:none;padding:0;margin:0}
@@ -14,14 +14,82 @@ em{font-style:normal}
 .l{float:left}
 .r{float:right}
 .con_div{width:1120px;margin:0 auto;overflow:hidden}
-.btn{color:#fff;font-size:24px;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px;-moz-transition:background 1s ease-in;-webkit-transition:background 1s ease-in;-o-transition:background 1s ease-in;-ms-transition:background 1s ease-in;transition:background 1s ease-in}
-.btn:hover{background:#f39800}
+@keyframes myfirst
+{
+0%   {background:#eba568;opacity:1}
+10%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+70%  {background:#f29b13;opacity:0.7}
+100% {background:#f39800;opacity:1}
+}
+@-moz-keyframes myfirst
+{
+0%   {background:#eba568;opacity:1}
+10%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+70%  {background:#f29b13;opacity:0.7}
+100% {background:#f39800;opacity:1}
+}
+@-webkit-keyframes myfirst
+{
+0%   {background:#eba568;opacity:1}
+10%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+70%  {background:#f29b13;opacity:0.7}
+100% {background:#f39800;opacity:1}
+}
+@-o-keyframes myfirst
+{
+0%   {background:#eba568;opacity:1}
+10%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+70%  {background:#f29b13;opacity:0.7}
+100% {background:#f39800;opacity:1}
+}
+@keyframes outtwo
+{
+100% {background:#eba568;opacity:1}
+70%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+10%  {background:#f29b13;opacity:0.5}
+0%   {background:#f39800;opacity:1}
+}
+@-moz-keyframes outtwo
+{
+100% {background:#eba568;opacity:1}
+70%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+10%  {background:#f29b13;opacity:0.5}
+0%   {background:#f39800;opacity:1}
+}
+@-webkit-keyframes outtwo
+{
+100% {background:#eba568;opacity:1}
+70%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+10%  {background:#f29b13;opacity:0.5}
+0%   {background:#f39800;opacity:1}
+}
+@-o-keyframes outtwo
+{
+100% {background:#eba568;opacity:1}
+70%  {background:#eda354;opacity:0.7}
+40%  {background:#ef9f38;opacity:0.4}
+10%  {background:#f29b13;opacity:0.5}
+0%   {background:#f39800;opacity:1}
+}
+.btn{animation: outtwo 0.5s;-moz-animation: outtwo 0.5s;-webkit-animation: outtwo 0.5s;-o-animation: outtwo 0.5s;color:#fff;font-size:24px;opacity:1;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px}
+.btn:hover{animation: myfirst 0.5s;-moz-animation: myfirst 0.5s;-webkit-animation: myfirst 0.5s;-o-animation: myfirst 0.5s;background:#f39800}
 .hr{ background:linear-gradient(#fff,#d7d5d5);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#d7d5d5));}
 .hr2{ background:linear-gradient(#d7d5d5,#fff);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d5d5), to(#fff))}
 .hr3{ background:linear-gradient(#eae9e9,#fff);height:9px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#eae9e9), to(#fff))}
 .hr4{ background:linear-gradient(#d7d3ae,#fffcd0);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d3ae), to(#fffcd0))}
 .page a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
 .page .page_a{background:#c4161c}
+.shop_btn{background:url(../images/formula_layer_03.png);width:20px;height:17px;display:inline-block}
+.shop_btn:hover{background:url(../images/formula_layer_05.png)}
+.eit_btn{background:url(../images/formula_layer_10.png);width:21px;height:20px;display:inline-block}
+.eit_btn:hover{background:url(../images/formula_layer_12.png)}
 /***********页面顶部样式*******/
 #header{font-size:14px;text-align:center;margin-bottom:-86px;min-width:1120px}
 nav a{margin:0 30px;display:inline-block;padding:0 0 3px 0}
@@ -31,6 +99,16 @@ nav a{margin:0 30px;display:inline-block;padding:0 0 3px 0}
 nav a:hover{color:#959595}
 nav .nav_a{color:#c4161c}
 #header .nav-line{position:absolute;border-bottom:1px solid #010101;height:0;overflow:hidden;width: 50px; left: 9px;top:50px}
+.head_top{position:absolute;z-index:999;top:25px;right:42px}
+.head_topa,.head_topa2{float:left}
+.head_topa a,.head_topa2 .head_topa2_home{background:url(../images/formula_06.jpg) no-repeat;width:20px;height:21px;display:inline-block;margin:0 8px}
+.head_topa a:hover{background:url(../images/formula_10.jpg) no-repeat}
+.head_topa2 .head_topa2_home{background:url(../images/formula_03.jpg) no-repeat}
+.head_topa2 .head_topa2_home:hover{background:url(../images/formula_11.jpg)}
+.head_topa2 div{position:absolute;background:rgba(0,0,0,0.5);color:#fff;width:82px;padding:0 9px;right:9px;text-align:center;display:none}
+.head_topa2 div a{color:#fff;display:inline-block;margin:12px 0}
+.head_topa2 div a:hover{color:#f8b551}
+.head_topa2 div span{display:block;border-top:1px #fff solid}
 /************页面底部样式*********/
 #footer{padding-top:50px}
 .footer_div{border-top:1px #959595 dashed;font-size:24px;color:#959595;padding:40px 0 30px 0}
@@ -52,3 +130,26 @@ nav .nav_a{color:#c4161c}
 #layer_con em{color:rgba(253,212,31,1)}
 #layer_con p{margin-bottom:18px}
 .layer_align{display: inline-block;vertical-align: middle;height: 100%;}
+.close_btn{width:25px;height:25px;border-radius:25px;padding:0;line-height:29px;text-align:center;float:right;margin:-48px -13px 0 0}
+/**弹出层**/
+#order{z-index:9999;width:1120px;position:fixed;top:25%;left:50%;margin-left:-560px;background:#fff;display:none}
+#order table{width:100%;text-align:left;font-size:18px;color:#6a3906;background:#f9ecd9}
+#order thead{background:#f8b551}
+#order thead th{height:50px;font-weight:bold;padding-left:45px}
+#order table td{padding-left:45px;height:50px;border-bottom:1px #fff solid}
+#order table a{color:#6a3906}
+#order table .shop_td{padding:0;text-align:center}
+.close_btn{margin:-10px -10px 0 0;position:absolute;right:0}
+#plan{z-index:9998;width:500px;height:300px;position:fixed;top:50%;left:50%;margin:-150px 0 0 -250px;background:#f9ecd9;border:1px #f8b551 solid;color:#6a3906;font-size:18px;display:none}
+#plan .plan_div{border-bottom:1px #fff solid;height:50px;line-height:50px;padding-left:50px}
+#plan label{font-weight:bold;width:150px;display:inline-block}
+#plan .plan_text{border:1px #6a3906 solid;height:24px;line-height:24px;font-size:18px;width:215px;display:none;padding:3px 0 3px 5px}
+#plan .eit_btn{vertical-align:middle;margin-left:8px}
+.select_box{display:inline-block;border:solid 1px #6a3906;position:relative;cursor:pointer;height:30px;line-height:30px;background:#fff url(../images/formula_layer_17.jpg) no-repeat right;padding:0 5px 0 5px;margin-top:10px}
+.option{border-left:solid 1px #6a3906;border-right:solid 1px #6a3906;position:absolute;top:31px;left:-1px;z-index:2;overflow:hidden;display:none}
+.option a{display:block;height:30px;background:#fff;border-bottom:1px #6a3906 solid;padding:0 5px;color:#6a3906;white-space:nowrap;}
+.option a:hover{background:#6a3906;color:#fff}
+#plan p{text-align:center}
+#plan p a{height:37px;line-height:42px;padding:0 35px;font-size:18px;margin-top:45px}
+.add_a{display:block;position:relative}
+.add_div{border:1px #623506 solid;height:20px;line-height:20px;position:absolute;background:#fff;padding:0 3px;box-shadow: 0 0 5px 0.5px #b4b0af;margin:22px 0 0 0;left:0;display:none}

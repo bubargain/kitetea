@@ -1,6 +1,5 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!--底部导航 start-->
- <!-- 尾部开始 -->
+
+ 
         <div id="footer">
         	<div class="con_div footer_div">
             	<div class="l footer_prod">
@@ -20,7 +19,7 @@
                 </div>
                 <div class="l friends">
                 	<h3>Let's be friends</h3>
-                    <p><a href="javascript:void(0)"><img src="images/index_23.jpg" width="52" height="54"></a><a href="javascript:void(0)"><img src="images/index_25.jpg" width="52" height="54"></a></p>
+                    <p><a href="javascript:void(0)"><img src="themes/default/images/index_23.jpg" width="52" height="54"></a><a href="javascript:void(0)"><img src="themes/default/images/index_25.jpg" width="52" height="54"></a></p>
                 </div>
             </div>
             <div class="hr"></div>
@@ -29,7 +28,7 @@
                 <span class="r">京ICP备13021991号-2,CHINA</span>
             </div>
         </div>
-    	<!-- 尾部结束 -->
+    	
 </div>
 <script type="text/javascript">
         $(document).ready(function() {
@@ -56,46 +55,4 @@
 			}); 
 		}
 		$(".topics_img_box img").LoadImage(true);
-		
-		/*页头控制*/
-		$(".head_topa2").hover(function(){
-			$(".head_topa2 div").show();	
-		},function(){
-			$(".head_topa2 div").hide();		
-		});
-		
-		$(".eit_btn").click(function(){
-			$(this).prev().show().focus();	
-		});
-		$(".close_btn").click(function(){
-			$("#layer_bg").hide();
-			$(this).parent().hide();
-		});
-		$(".head_topa2 div a:first").click(function(){
-			$("#layer_bg").show();
-			$("#order").fadeIn();	
-		});
-		$(".head_topa2 div a:last").click(function(){
-			$("#layer_bg").show();
-			$("#plan").fadeIn();	
-			$(".select_box .option").width($(".select_box .option").width()+31);
-			$(".select_box").width($(".select_box .option").width()-10);
-		});
-		$(".add_a").hover(function(){
-			$(this).find("span").fadeIn();	
-		},function(){
-			$(this).find("span").fadeOut();		
-		});
     </script>
-    <!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-47032460-1', 'auto');  
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
