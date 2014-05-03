@@ -47,6 +47,12 @@ Applying to modern life, the fast-paced environment often pushes stresses on you
         
     </div>
 	{insert_scripts files='jquery-1.7.2.min.js,kite_common.js'}
+  
+     <script type="text/javascript">
+		$(document).ready(function() {
+			$(".ousStory_font").animate({'top':35+"%"},2500);
+        });
+	</script>
     <!-- 尾部开始 -->
         <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
     	<!-- 尾部结束 -->
