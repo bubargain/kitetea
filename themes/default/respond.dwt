@@ -17,9 +17,9 @@ p a{color:#006acd; text-decoration:underline;}
 </style>
 </head>
 <body>
-<div>
+<div style="height:250px">
 <!-- #BeginLibraryItem "/library/k_page_header.lbi" --><!-- #EndLibraryItem -->
-
+</div>
 <div id="content">
 	<div class="blank"></div>
 	<div class="block">
@@ -29,6 +29,7 @@ p a{color:#006acd; text-decoration:underline;}
     <div class="boxCenterList RelaArticle" align="center">
       <div style="margin:20px auto;">
       <p style="font-size: 14px; font-weight:bold; color: red;">{$message}</p>
+       <p style="font-size: 14px;"> It could take some time to handle your payment. <br/>Don't worry,we will send you email to confirm your purchasement</p>
         <div class="blank"></div>
         <!--{if $virtual_card}-->
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
@@ -36,6 +37,7 @@ p a{color:#006acd; text-decoration:underline;}
           <!--{foreach from=$vgoods.info item=card}-->
           		<tr>
           	    <h3><span>{$lang.system_info}</span></h3>
+               
                 </tr>
             <tr>
             <td bgcolor="#FFFFFF">{$vgoods.goods_name}</td>
@@ -49,7 +51,7 @@ p a{color:#006acd; text-decoration:underline;}
         <!--{/foreach}-->
         </table>
         <!--{/if}-->
-        <a href="{$shop_url}">{$lang.back_home}</a>
+        <a href="{$shop_url}">Return {$lang.back_home}</a>
       </div>
     </div>
    </div>
