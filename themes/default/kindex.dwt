@@ -45,7 +45,7 @@
                                     <img src="images/pro-pic2.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color1"></span></div>
                                     <h3>BLACK TEA</h3>
-                                    <p class="price">$15.00</p>
+                                    <p class="price">$5.80</p>
                                 </a>
                             </div>
                             <div class="col">
@@ -54,7 +54,7 @@
                                     <img src="images/pro-pic3.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color2"></span></div>
                                     <h3>GREEN TEA</h3>
-                                    <p class="price">$15.00</p>
+                                    <p class="price">$5.80</p>
                                 </a>
                             </div>
                             <div class="col">
@@ -63,7 +63,7 @@
                                     <img src="images/pro-pic1.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color3"></span></div>
                                     <h3>PUER TEA</h3>
-                                    <p class="price">$15.00</p>
+                                    <p class="price">$5.80</p>
                                 </a>
                             </div>
                             <div class="col col_last">
@@ -72,7 +72,7 @@
                                     <img src="images/pro-pic4.jpg" width="240" height="240">
                                     <div class="color_div"><span class="color4"></span></div>
                                     <h3>WHITE TEA</h3>
-                                    <p class="price">$15.00</p>
+                                    <p class="price">$5.80</p>
                                 </a>
                             </div>
                         </section>
