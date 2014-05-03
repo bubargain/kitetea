@@ -12,7 +12,8 @@
             <div class="nav-line"></div>
             <input type="hidden" id="hpage" value="{$currentPage}" />
         </div>
-        <!-- {if $smarty.session.user_id > 0} -->
+     
+        <!-- {if $smarty.session.user_id != 0} -->
         <div class="head_top">
         	<div class="head_topa"><a href="formula.php"></a></div>
             <div class="head_topa2">
@@ -27,7 +28,51 @@
 
         <!--{else}-->
             <div class="head_top">
-                FB Login
+               <div id="fb-root"></div>
+                <script>
+                  window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '225642610978799',
+                    status     : true, // check login status
+                    cookie     : true, // enable cookies to allow the server to access the session
+                    xfbml      : true  // parse XFBML
+                  });
+                
+                  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+                  // for any authentication related change, such as login, logout or session refresh. This means that
+                  // whenever someone who was previously logged out tries to log in again, the correct case below 
+                  // will be handled. 
+                  FB.Event.subscribe('auth.authResponseChange', function(response) {
+                    // Here we specify what we do with the response anytime this event occurs. 
+
+					if (response.status === 'connected') {
+					  
+					   var uid = response.authResponse.userID;
+    				   var accessToken = response.authResponse.accessToken;	
+					   
+					  window.location.href="fbuser.php?step=login&reload=1&uid="+uid+"&token="+accessToken; 
+						
+                    } else if (response.status === 'not_authorized') {
+                      FB.login();
+                    } else {
+ 					 
+                      FB.login();
+                    }
+                  });
+                  };
+                
+                  // Load the SDK asynchronously
+                  (function(d){
+                   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement('script'); js.id = id; js.async = true;
+                   js.src = "//connect.facebook.net/en_US/all.js";
+                   ref.parentNode.insertBefore(js, ref);
+                  }(document));
+		  
+                </script>
+                 <fb:login-button show-faces="false"  size="large" max-rows="1">
+				 Login</fb:login-button>
             </div>
         <!--{/if}-->
        
@@ -42,70 +87,34 @@
         	<thead>
             	<tr>
                 	<th width="225">Products</th>
-                    <th width="105">Pages</th>
+                    <th width="105">Consignee</th>
                     <th width="160">Dates</th>
-                    <th width="115">Add</th>
-                    <th width="100">Delivery</th>
-                    <th>Order again</th>
+                    <th width="115">Address</th>
+                    <th width="100">Status</th>
+                    <!--<th>Order again</th> -->
                 </tr>
             </thead>
             <tbody>
-            	<tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
-                <tr>
-                	<td>Product1 name</td>
-                    <td>10</td>
-                    <td>27.03.2014</td>
-                    <td><a href="javascript:void(0)" class="add_a">xxxxxx<span class="add_div">xxxxxxxxxxxxxxxxxxxxx</span></a></td>
-                    <td>xxxx</td>
-                    <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>
-                </tr>
+         <!-- {if ordersnum > 0 } -->
+            <!--{foreach from=$orders item=item}-->
+          <tr>
+            <td align="center" >{$item.recipe_name}</td>
+             <td align="center" >{$item.consignee}</td>
+           
+             <td align="center" >{$item.order_time}</td>
+             <td><a href="javascript:void(0)" class="add_a">SHOW<span class="add_div">{$item.address}</span></a></td>
+             <td align="center" ><a href="user.php?act=order_detail&order_id={$item.order_id}" class="f6">{$item.order_status}</a></td>
+            
+            <!-- <td class="shop_td"><a href="javascript:void(0)" class="shop_btn"></a></td>  -->
+          </tr>
+      
+          
+          <!--{/foreach}-->
+         <!-- {else} -->
+          <tr>
+          	<td>No order yet</td>
+          </tr>
+          <!-- {/if} -->
             </tbody>
         </table>
     </div>

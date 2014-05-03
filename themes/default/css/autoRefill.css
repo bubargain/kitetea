@@ -4,7 +4,7 @@
 .custom_plan h1{font-size:60px}
 .custom_plan h3{font-size:18px;color:#464646}
 .custom_plan .form{font-size:48px}
-.select_box{display:inline-block;border:solid 1px #eba568;color:#eba568;position:relative;cursor:pointer;height:53px;line-height:60px}
+.select_boxs{display:inline-block;border:solid 1px #eba568;color:#eba568;position:relative;cursor:pointer;height:53px;line-height:60px}
 .option{border-left:solid 1px #eba568;border-right:solid 1px #eba568;position:absolute;top:54px;left:-1px;z-index:2;overflow:hidden;display:none}
 .option a{display:block;height:53px;background:#fff;border-bottom:1px #eba568 solid;padding:0 5px;color:#959595}
 .option a:hover{background:#eba568;color:#fff}

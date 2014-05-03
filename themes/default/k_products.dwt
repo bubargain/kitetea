@@ -18,27 +18,29 @@
 		function doSubmit()
 		{
 				if($('#tea_id').val())
-				{
-				
-					Ajax.call('flow.php?step=clear', null , null , 'POST', 'JSON');
-					
-					var teaId= $('#tea_id').val();
-					addToCart(teaId);
+				{	
+					var teaId = $('#tea_id').val();
+					var accessory = new Array();
+					var accessoryNum = new Array();
 					{foreach from=$goods item=onegoods}
-					
-      				  {if $onegoods.brand_id eq 1}
-					   if(parseInt($('#ingre{$onegoods.goods_id}').html()) >10)
-							addToCart({$onegoods.goods_id},0,parseInt($('#ingre{$onegoods.goods_id}').html())/10);
+					  {if $onegoods.cat_id eq 3}
+					    if(parseInt($('#ingre{$onegoods.goods_id}').html()) >10)							
+						{
+						
+								accessory.push({$onegoods.goods_id});
+								accessoryNum.push(parseInt($('#ingre{$onegoods.goods_id}').html())/10);
+						}
 					  {/if}
-					{/foreach}
-					
+					{/foreach} 
+					addAllToCart(teaId,accessory,accessoryNum);
 				}
 				else
 				{
-					alert('You havnt choosed yet!');
+					alert("You didn't choose anything!");
 				}
 			
 		}
+		var tea=new Array();
 		</script>
 </head>
 
@@ -92,7 +94,7 @@
                     </section>
                 </div>
                 <div class="products_div4">
-                    <h2>- 3. Enhance flavor and aroma -</h2>
+                    <h2>- 3. Add tea mates to make unique flavor and aroma -</h2>
                    
                     
                     <div class="products_tea con_div">
@@ -114,6 +116,7 @@
                             </div>
                            <script type="text/javascript">
 						   	new scale('btn{$onegoods.goods_id}','bar{$onegoods.goods_id}','ingre{$onegoods.goods_id}');
+							tea.push(['{$onegoods.goods_img}','{$onegoods.goods_desc}']);
 						   </script> 
                             
                        <!--{/if}-->
@@ -123,10 +126,12 @@
                      
                            
                         </div>
+                        <!-- 示意图 -->
                         <div class="l products_tear">
                         	<img src="images/tea.jpg" width="285" height="189" class="l">
-                            <p>Stir in osmanthus sugar and serve.Stir in osmanthus sugar and serve.Stir in osmanthus sugar and serve.Stir in osmanthus sugar and serve.Stir in osmanthusStir in osmanthus sugar and serve.sugar and serve.</p>
+                            <p>Choose the favor you like and make your speical blend.</p>
                         </div>
+                      
                     </div>
                     <div class="page tea_page"><a href="javascript:void(0)" target="_blank" class="page_a"></a><a href="javascript:void(0)" target="_blank"></a><a href="javascript:void(0)" target="_blank"></a></div>
                 </div>
@@ -151,7 +156,7 @@
     {insert_scripts files='jquery-1.7.2.min.js,common.js,kite_common.js'}
     {insert_scripts files='transport.js'}
     <script type="text/javascript">
-		var tea=[["{$ecs_img_path}/gh.jpg","{$ecs_img_path}/mdx.jpg","{$ecs_img_path}/mlh.jpg","{$ecs_img_path}/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
+		//var tea=[["{$ecs_img_path}/gh.jpg","{$ecs_img_path}/mdx.jpg","{$ecs_img_path}/mlh.jpg","{$ecs_img_path}/xyc.jpg"],["Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout.","薰衣草.",".","Redeem it at warbyparker.com or at any of our retail locations. Once you find something you like, apply your gift card code during checkout."]];
 
 		var q_a=null;
 		$(".products_btndiv a").click(function(){
@@ -172,9 +177,9 @@
 		});	
 		$(".products_teadiv a").hover(function(){
 			var num=$(this).parent().parent().index();
-		
-			$(".products_tear img").attr("src",tea[0][num]);	
-			$(".products_tear p").html(tea[1][num]);	
+		    
+			$(".products_tear img").attr("src",tea[num][0]);	
+			$(".products_tear p").html(tea[num][1]);	
 		});
 	$(document).ready(function(){
 		$(".enroll a").click(function(){
@@ -209,5 +214,6 @@
         </div>
         <div class="layer_align"></div>
     </div>
+    
 </body>
 </html>

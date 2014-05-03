@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="themes/default/images/favicon.jpg"/>
+<title>My Recipes - KITE TEA</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_css_path}/formula.css" rel="stylesheet" type="text/css" />
+</head>
+ {insert_scripts files='jquery-1.7.2.min.js,kite_common.js,formula.js'}
+<body>
+	<div>
+        <!-- 顶部开始 -->
+          <!-- #BeginLibraryItem "/library/k_page_header.lbi" --><!-- #EndLibraryItem -->
+        <!-- 顶部结束 -->
+        <!-- 正文开始 -->
+        <div id="content">
+        	<div class="hr2"></div>
+            <section class="con_div formula">
+            	<div class="formula_title"><span><a href="javascript:void(0)">My Recipe</a></span><em></em><span><a href="javascript:void(0)">Friends’ Recipe</a></span><em></em><span><a href="javascript:void(0)">Hot Recipe</a></span></div>
+                <div class="formula_list">
+                	
+                   <!-- { foreach from=$recipes item=recipe name=foo} -->
+                   		<div class="formula_item" id="formula_item{$smarty.foreach.foo.index}">
+                    	<div class="l formula_iteml">
+                       		 <!-- { foreach from=$recipe.goods item=good } -->
+                        	<div><img src="{$good.goods_img}" width="320" height="320"><span></span></div>
+                				<script>
+                                formula{$smarty.foreach.foo.index}.push(["{$good.goods_img}","#b3d465","1"]);
+								
+                                </script>
+                            <!-- {/foreach} -->
+                        </div>
+                        <div class="l formula_itemr">
+                        	<div class="formula_itemr_info">
+                            	<div class="l formula_itemrl">
+                                	<div><span>ingredients</span><a href="javascript:void(0)" class="formula_xh"></a></div>
+                                    <p id="formula_name{$smarty.foreach.foo.index}">
+                                    <!-- { foreach from=$recipe.goods item=good } -->
+                                    	{$good.goods_name}&nbsp;
+                                    <!-- {/foreach} -->
+                                    </p>
+                                </div>
+                                <div class="l formula_itemrr">
+                                	<!--<div><span>Buy</span>10</div> -->
+                                    <!--<div><span>Share</span>5</div> -->
+                                </div>
+                            </div>
+                            <div class="formula_itemr_head">
+                            	<a href="javascript:void(0)" class="l"><img src="images/formula_18.jpg" width="85" height="85"></a>
+                                <div class="l">
+                                	<a href="javascript:void(0)">Auther Say</a>
+                                    <p> Unique Taste and Aroma of Yours</p>
+                                </div>
+                                <a href="javascript:void(0)" class="l btn">ADD TO CART</a>
+                            </div>
+                        </div>
+                    </div>
+                        <script type="text/javascript">
+						$(".formula_list").slideDown(1000);	
+						//var formula=[["images/formula_15.jpg","#b3d465","1"],["images/formula_15.jpg","#ec6941","0.8"],["images/formula_15.jpg","#b9b258","0.5"],["images/formula_15.jpg","#ec6941","0.8"],["images/formula_15.jpg","#b3d465","0.5"],["images/formula_15.jpg","#ec6941","0.8"],["images/formula_15.jpg","#b3d465","0.5"]];
+						
+						var q_formula=$("formula_item{$smarty.foreach.foo.index} .formula_iteml div");
+						for(var i=0;i<q_formula.length;i++){
+							q_formula.eq(i).find("img").attr("src",formula[i][0]);	
+							q_formula.eq(i).find("span").css("background-color",formula[i][1]);	
+							q_formula.eq(i).find("span").css("opacity",formula[i][2]);	
+						}
+					
+						new formulaScroll("#formula_item{$smarty.foreach.foo.index} .formula_iteml div");
+						//new formulaScroll("#formula_item2 .formula_iteml div");
+						//new formulaScroll("#formula_item3 .formula_iteml div");
+				
+					
+				</script>
+                    
+                   <!-- {/foreach} -->
+                    
+            </section>
+        </div>
+        <!-- 正文结束 -->
+ 
+    </div>
+   
+
+   
+
+       <!-- 尾部开始 -->
+       <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    	<!-- 尾部结束 -->
+</body>
+</html>

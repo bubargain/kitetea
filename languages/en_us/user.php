@@ -294,7 +294,7 @@ $_LANG['os'][OS_SPLITED] = 'Confirmed';
 $_LANG['os'][OS_SPLITING_PART] = 'Confirmed';
 $_LANG['os'][OS_CANCELED] = 'Canceled';
 $_LANG['os'][OS_INVALID] = 'Invalid';
-$_LANG['os'][OS_RETURNED] = 'Returned purchase';
+$_LANG['os'][OS_RETURNED] = 'Returned';
 
 $_LANG['ss'][SS_UNSHIPPED] = 'Unshipped';
 $_LANG['ss'][SS_PREPARING] = 'Preparing';

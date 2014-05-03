@@ -1009,10 +1009,8 @@ function cart_weight_price($type = CART_GENERAL_GOODS)
  * @param   integer $parent     基本件
  * @return  boolean
  */
-function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1 )
+function addto_cart($goods_id, $num = 1, $spec = array(), $parent )
 {
-	$num = intval($num); 
-	
     $GLOBALS['err']->clean();
     $_parent_id = $parent;
 
@@ -1039,16 +1037,12 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
     /* 如果是作为配件添加到购物车的，需要先检查购物车里面是否已经有基本件 */
     if ($parent > 0)
     {
+
         $sql = "SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('cart') .
                 " WHERE goods_id='$parent' AND session_id='" . SESS_ID . "' AND extension_code <> 'package_buy'";
         if ($GLOBALS['db']->getOne($sql) == 0)
         {
             $GLOBALS['err']->add($GLOBALS['_LANG']['no_basic_goods'], ERR_NO_BASIC_GOODS);
-
-            return false;
-        }elseif($GLOBALS['db']->getOne($sql) > 0 && $gnum<=0){
-        	
-        	$GLOBALS['err']->add('请输入配料数量', ERR_NO_BASIC_GOODS);
 
             return false;
         }
@@ -1142,7 +1136,7 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
     $sql = "SELECT parent_id, goods_price " .
             "FROM " . $GLOBALS['ecs']->table('group_goods') .
             " WHERE goods_id = '$goods_id'" .
-            //" AND goods_price < '$goods_price'" .
+            " AND goods_price < '$goods_price'" .
             " AND parent_id = '$_parent_id'" .
             " ORDER BY goods_price";
     $res = $GLOBALS['db']->query($sql);
@@ -1150,7 +1144,7 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
     {
         $basic_list[$row['parent_id']] = $row['goods_price'];
     }
-  
+
     /* 取得购物车中该商品每个基本件的数量 */
     $basic_count_list = array();
     if ($basic_list)
@@ -1171,31 +1165,31 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
 
     /* 取得购物车中该商品每个基本件已有该商品配件数量，计算出每个基本件还能有几个该商品配件 */
     /* 一个基本件对应一个该商品配件 */
-    //if ($basic_count_list)
-    //{
-      //  $sql = "SELECT parent_id, SUM(goods_number) AS count " .
-            //    "FROM " . $GLOBALS['ecs']->table('cart') .
-            //    " WHERE session_id = '" . SESS_ID . "'" .
-            //    " AND goods_id = '$goods_id'" .
-             //   " AND extension_code <> 'package_buy' " .
-             //   " AND parent_id " . db_create_in(array_keys($basic_count_list)) .
-             //   " GROUP BY parent_id";
-        //$res = $GLOBALS['db']->query($sql);
-       // while ($row = $GLOBALS['db']->fetchRow($res))
-        //{
-            //$basic_count_list[$row['parent_id']] -= $row['count'];
-        //}
-   // }
-      
+    if ($basic_count_list)
+    {
+        $sql = "SELECT parent_id, SUM(goods_number) AS count " .
+                "FROM " . $GLOBALS['ecs']->table('cart') .
+                " WHERE session_id = '" . SESS_ID . "'" .
+                " AND goods_id = '$goods_id'" .
+                " AND extension_code <> 'package_buy' " .
+                " AND parent_id " . db_create_in(array_keys($basic_count_list)) .
+                " GROUP BY parent_id";
+        $res = $GLOBALS['db']->query($sql);
+        while ($row = $GLOBALS['db']->fetchRow($res))
+        {
+            $basic_count_list[$row['parent_id']] -= $row['count'];
+        }
+    }
+
     /* 循环插入配件 如果是配件则用其添加数量依次为购物车中所有属于其的基本件添加足够数量的该配件 */
     foreach ($basic_list as $parent_id => $fitting_price)
     {
         /* 如果已全部插入，退出 */
-       /* if ($num <= 0)
+        if ($num <= 0)
         {
             break;
         }
-           */
+
         /* 如果该基本件不再购物车中，执行下一个 */
         if (!isset($basic_count_list[$parent_id]))
         {
@@ -1203,25 +1197,25 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
         }
 
         /* 如果该基本件的配件数量已满，执行下一个基本件 */
-        /* if ($basic_count_list[$parent_id] <= 0)
+        if ($basic_count_list[$parent_id] <= 0)
         {
             continue;
         }
-         */
+
         /* 作为该基本件的配件插入 */
         $parent['goods_price']  = max($fitting_price, 0) + $spec_price; //允许该配件优惠价格为0
-        $parent['goods_number'] = $num;
+        $parent['goods_number'] = min($num, $basic_count_list[$parent_id]);
         $parent['parent_id']    = $parent_id;
 
         /* 添加 */
         $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('cart'), $parent, 'INSERT');
-        
+
         /* 改变数量 */
-        //$num -= $parent['goods_number'];
+        $num -= $parent['goods_number'];
     }
 
     /* 如果数量不为0，作为基本件插入 */
-    if ($_parent_id == 0)
+    if ($num > 0)
     {
         /* 检查该商品是否已经存在在购物车中 */
         $sql = "SELECT goods_number FROM " .$GLOBALS['ecs']->table('cart').
@@ -1263,10 +1257,11 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $gnum = 1
         }
         else //购物车没有此物品，则插入
         {
+
             $goods_price = get_final_price($goods_id, $num, true, $spec);
             $parent['goods_price']  = max($goods_price, 0);
             $parent['goods_number'] = $num;
-            $parent['parent_id']    = 0;
+            $parent['parent_id']    = $parent;
             $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('cart'), $parent, 'INSERT');
         }
     }

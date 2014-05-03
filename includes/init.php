@@ -189,15 +189,10 @@ if (!defined('INIT_NO_SMARTY'))
 
     $smarty->assign('lang', $_LANG);
     $smarty->assign('ecs_charset', EC_CHARSET);
-    if (!empty($_CFG['stylename']))
-    {
-        $smarty->assign('ecs_css_path', 'themes/' . $_CFG['template'] . '/style_' . $_CFG['stylename'] . '.css');
-    }
-    else
-    {
+   
         $smarty->assign('ecs_css_path', 'themes/' . $_CFG['template'] . '/css');
 		$smarty->assign('ecs_img_path','themes/'. $_CFG['template'].'/images');
-    }
+   
 
 }
 

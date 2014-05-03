@@ -1,6 +1,17 @@
 /* $Id : common.js 4865 2007-01-31 14:04:10Z paulgao $ */
 
 
+/**
+	批量添加商品到购物车
+*/
+function addAllToCart(goodsId,accessories,accessoryNum)
+{
+	var goods = new Object();
+	goods.names = accessories;
+	goods.count = accessoryNum;
+	Ajax.call('cart.php?step=add_all_to_cart','goods=' + goodsId +'&acc=' +objToJSONString(goods) ,addToCartResponse,'POST', 'JSON');
+}
+ 
 
 /* *
  * 添加商品到购物车 
@@ -31,7 +42,7 @@ function addToCart(goodsId, parentId,goodsNumber)
   goods.spec     = spec_arr;
   goods.goods_id = goodsId;
   goods.number   = number;
-  goods.parent   = (typeof(parentId) == "undefined") ? 0 : parseInt(parentId);
+  goods.parent   = (typeof(parentId) == "undefined") ? 0 : parentId;
 
   Ajax.call('flow.php?step=add_to_cart', 'goods=' + objToJSONString(goods), addToCartResponse, 'POST', 'JSON');
 }

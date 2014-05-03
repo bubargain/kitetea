@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.formula_title{font-size:24px;margin-top:120px;border-bottom:1px #959595 dashed;padding-bottom:13px}
+.formula_title span{width:372px;text-align:center;display:inline-block}
+.formula_title a{color:#464646;}
+.formula_title a:hover,.formula_title .formula_title_a{color:#f39800}
+.formula_title em{display:inline-block;border-left:1px #959595 dashed;height:37px; vertical-align:middle}
+.formula_iteml{width:320px;height:320px}
+.formula_iteml span{width:20px;height:20px;border-radius:20px;background:#b3d465;float:right;margin:288px 0 0 0;right:35px;position:relative}
+.formula_iteml div{position:absolute;cursor:pointer}
+.formula_item{background:#eee;border:1px #c9c9c9 solid;overflow:hidden;padding:15px 0 15px 17px;margin-top:48px}
+.formula_itemrl{font-size:24px;width:580px}
+.formula_itemrl div{text-transform:uppercase}
+.formula_itemrl div a{background:url(../images/formula_05.png);width:28px;height:25px;display:inline-block;vertical-align:-4px;margin-left:20px}
+.formula_itemrl div a:hover,.formula_itemrl div .formula_xh{background:url(../images/formula_03.png)}
+.formula_itemrl p{width:365px;word-break:break-all;line-height:30px;padding-top:10px}
+.formula_itemrr{font-size:18px}
+.formula_itemrr span{width:70px;display:inline-block;font-weight:bold}
+.formula_itemr{padding:30px 0 0 65px;color:#464646}
+.formula_itemr_info{overflow:hidden;padding-bottom:50px}
+.formula_itemr_head div.l{font-size:18px;padding-left:18px;width:358px}
+.formula_itemr_head div.l a{font-weight:bold;color:#464646;}
+.formula_itemr_head div.l p{width:268px;line-height:24px;padding-top:8px}
+.formula_itemr_head .btn{height:37px;line-height:42px;padding:0;width:205px;text-align:center;font-size:18px;margin-top:43px}
+.formula_list{display:none}

@@ -42,7 +42,7 @@
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <th bgcolor="#ffffff">{$lang.goods_name}</th>
-      <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
+              <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
               <th bgcolor="#ffffff">{$lang.goods_attr}</th>
               <!-- {/if} -->
                
@@ -60,11 +60,11 @@
                   <!-- {elseif $show_goods_thumb eq 2} -->
                     <a href="goods.php?id={$goods.goods_id}" target="_blank"><img src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a>
                   <!-- {else} -->
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank"><img src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a><br />
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
+                    <a href="#" target="_blank"><img src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a><br />
+                    <a href="#" target="_blank" class="f6">{$goods.goods_name}</a>
                   <!-- {/if} -->
                   <!-- {if $goods.parent_id gt 0} 配件 -->
-                  <span style="color:#FF0000">（{$lang.accessories}）</span>
+                  <span style="color:#FF0000">{Add-on}</span>
                   <!-- {/if} -->
                   <!-- {if $goods.is_gift gt 0} 赠品 -->
                   <span style="color:#FF0000">（{$lang.largess}）</span>
@@ -105,19 +105,19 @@
               </td>
               <td align="right" bgcolor="#ffffff">
                
-                <input name="submit" type="submit" class="bnt_blue_1" value="{$lang.update_cart}" />
+                
               </td>
             </tr>
           </table>
           
-          <input type="hidden" name="step" value="update_cart" />
+          
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tr>
             <td bgcolor="#ffffff">
             <!--<a href="./"><img src="images/continue.gif" alt="continue" /></a>-->
             </td>
-            <td bgcolor="#ffffff" align="right"><a href="flow.php?step=checkout"><img src="images/checkout.gif" alt="checkout" /></a></td>
+            <td bgcolor="#ffffff" align="CENTER"><a href="flow.php?step=checkout">SAVE RECIPE</a></td>
           </tr>
         </table>
        <!-- {if $smarty.session.user_id gt 0} -->
@@ -223,28 +223,7 @@
     }
   }
   </script>
-  <div class="block" >
-    <div class="flowBox">
-    <h6><span>{$lang.goods_fittings}</span></h6>
-    <form action="flow.php" method="post">
-        <div class="flowGoodsFittings clearfix">
-          <!-- {foreach from=$fittings_list item=fittings} -->
-            <ul class="clearfix">
-              <li class="goodsimg">
-                <a href="{$fittings.url}" target="_blank"><img src="{$fittings.goods_thumb}" alt="{$fittings.name|escape:html}" class="B_blue" /></a>
-              </li>
-              <li>
-                <a href="{$fittings.url}" target="_blank" title="{$fittings.goods_name|escape:html}" class="f6">{$fittings.short_name|escape:html}</a><br />
-                {$lang.fittings_price}<font class="f1">{$fittings.fittings_price}</font><br />
-                {$lang.parent_name}{$fittings.parent_short_name}<br />
-                <a href="javascript:fittings_to_flow({$fittings.goods_id},{$fittings.parent_id})"><img src="images/bnt_buy.gif" alt="{$lang.collect_to_flow}" /></a>
-              </li>
-            </ul>
-          <!-- {/foreach} 循环商品配件结束 -->
-        </div>
-    </form>
-    </div>
-  </div>
+  
   <div class="blank5"></div>
   <!-- {/if} -->
 
@@ -655,9 +634,9 @@
               <!--{if $order.shipping_name}-->{$lang.select_shipping}: <strong>{$order.shipping_name}</strong>，<!--{/if}-->{$lang.select_payment}: <strong>{$order.pay_name}</strong>。{$lang.order_amount}: <strong>{$total.amount_formated}</strong>
               </td>
             </tr>
-            <tr>
+            <!--<tr>
               <td align="center" bgcolor="#FFFFFF">{$order.pay_desc}</td>
-            </tr>
+            </tr> -->
             <!-- {if $pay_online} -->
             <!-- 如果是线上支付则显示支付按钮 -->
             <tr>
@@ -691,126 +670,176 @@
           <p style="text-align:center; margin-bottom:20px;">{$order_submit_back}</p>
         </div>
         <!-- {/if} -->
-        <!-- {if $step eq "login"} -->
-        {insert_scripts files='utils.js,user.js'}
-        <script type="text/javascript">
-        {foreach from=$lang.flow_login_register item=item key=key}
-          var {$key} = "{$item}";
+   <!-- {if $step eq "login"} -->
+      {insert_scripts files='utils.js'}
+      <script type="text/javascript">
+      {foreach from=$lang.flow_login_register item=item key=key}
+        var {$key} = "{$item}";
+      {/foreach}
+
+      {literal}
+      function checkLoginForm(frm) {
+        if (Utils.isEmpty(frm.elements['username'].value)) {
+          alert(username_not_null);
+          return false;
+        }
+
+        if (Utils.isEmpty(frm.elements['password'].value)) {
+          alert(password_not_null);
+          return false;
+        }
+
+        return true;
+      }
+
+      function checkSignupForm(frm) {
+        if (Utils.isEmpty(frm.elements['username'].value)) {
+          alert(username_not_null);
+          return false;
+        }
+
+        if (Utils.trim(frm.elements['username'].value).match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+        {
+          alert(username_invalid);
+          return false;
+        }
+
+        if (Utils.isEmpty(frm.elements['email'].value)) {
+          alert(email_not_null);
+          return false;
+        }
+
+        if (!Utils.isEmail(frm.elements['email'].value)) {
+          alert(email_invalid);
+          return false;
+        }
+
+        if (Utils.isEmpty(frm.elements['password'].value)) {
+          alert(password_not_null);
+          return false;
+        }
+
+        if (frm.elements['password'].value.length < 6) {
+          alert(password_lt_six);
+          return false;
+        }
+
+        if (frm.elements['password'].value != frm.elements['confirm_password'].value) {
+          alert(password_not_same);
+          return false;
+        }
+        return true;
+      }
+      {/literal}
+      </script>
+      <!-- 开始用户登录注册界面 -->
+      
+      <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="top" >
+                <div id="fb-root"></div>
+                <script>
+                  window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '225642610978799',
+                    status     : true, // check login status
+                    cookie     : true, // enable cookies to allow the server to access the session
+                    xfbml      : true  // parse XFBML
+                  });
+                
+                  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+                  // for any authentication related change, such as login, logout or session refresh. This means that
+                  // whenever someone who was previously logged out tries to log in again, the correct case below 
+                  // will be handled. 
+                  FB.Event.subscribe('auth.authResponseChange', function(response) {
+                    // Here we specify what we do with the response anytime this event occurs. 
+                    if (response.status === 'connected') {
+                      // The response object is returned with a status field that lets the app know the current
+                      // login status of the person. In this case, we're handling the situation where they 
+                      // have logged in to the app.
+                      // testAPI();
+					  
+					   var uid = response.authResponse.userID;
+    				   var accessToken = response.authResponse.accessToken;
+						
+						//FB.api('/me',function(response){
+								//console.log(response);
+						//	});
+					
+					
+					   Ajax.call("fbuser.php?step=login","uid="+uid+"&token="+accessToken,null,'GET','JSON'); 
+						 
+                    } else if (response.status === 'not_authorized') {
+                      // In this case, the person is logged into Facebook, but not into the app, so we call
+                      // FB.login() to prompt them to do so. 
+                      // In real-life usage, you wouldn't want to immediately prompt someone to login 
+                      // like this, for two reasons:
+                      // (1) JavaScript created popup windows are blocked by most browsers unless they 
+                      // result from direct interaction from people using the app (such as a mouse click)
+                      // (2) it is a bad experience to be continually prompted to login upon page load.
+                      FB.login();
+                    } else {
+                      // In this case, the person is not logged into Facebook, so we call the login() 
+                      // function to prompt them to do so. Note that at this stage there is no indication
+                      // of whether they are logged into the app. If they aren't then they'll see the Login
+                      // dialog right after they log in to Facebook. 
+                      // The same caveats as above apply to the FB.login() call here.
+                      FB.login();
+                    }
+                  });
+                  };
+                
+                  // Load the SDK asynchronously
+                  (function(d){
+                   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement('script'); js.id = id; js.async = true;
+                   js.src = "//connect.facebook.net/en_US/all.js";
+                   ref.parentNode.insertBefore(js, ref);
+                  }(document));
+				
+				
+             			  
+                </script>
+                 <!-- {if $smarty.session.user_id = 0  } -->
+          			Manage Recipe By
+                 <!-- {/if} -->
+             <fb:login-button show-faces="true"  size="xlarge" max-rows="1">
+				 Log in</fb:login-button>
+          </td>
+
+           
+        </tr>
+       
+      </table>
+      <br/>
+      <!--用户地址填写界面-->
+      <!-- {if $smarty.session.user_id = 0 } --><div class="title-div">or Direct Purchase</div><!-- {/if} -->
+      {insert_scripts files='region.js,utils.js'}
+      <script type="text/javascript">
+        region.isAdmin = false;
+        {foreach from=$lang.flow_js item=item key=key}
+        var {$key} = "{$item}";
         {/foreach}
 
         {literal}
-        function checkLoginForm(frm) {
-          if (Utils.isEmpty(frm.elements['username'].value)) {
-            alert(username_not_null);
-            return false;
-          }
-
-          if (Utils.isEmpty(frm.elements['password'].value)) {
-            alert(password_not_null);
-            return false;
-          }
-
-          return true;
-        }
-
-        function checkSignupForm(frm) {
-          if (Utils.isEmpty(frm.elements['username'].value)) {
-            alert(username_not_null);
-            return false;
-          }
-
-          if (Utils.trim(frm.elements['username'].value).match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+        onload = function() {
+          if (!document.all)
           {
-            alert(username_invalid);
-            return false;
+            document.forms['theForm'].reset();
           }
-
-          if (Utils.isEmpty(frm.elements['email'].value)) {
-            alert(email_not_null);
-            return false;
-          }
-
-          if (!Utils.isEmail(frm.elements['email'].value)) {
-            alert(email_invalid);
-            return false;
-          }
-
-          if (Utils.isEmpty(frm.elements['password'].value)) {
-            alert(password_not_null);
-            return false;
-          }
-
-          if (frm.elements['password'].value.length < 6) {
-            alert(password_lt_six);
-            return false;
-          }
-
-          if (frm.elements['password'].value != frm.elements['confirm_password'].value) {
-            alert(password_not_same);
-            return false;
-          }
-          return true;
         }
         {/literal}
-        </script>
-        <!-- 开始用户登录注册界面 -->
-        <div class="flowBox">
-        <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-          <tr>
-            <td width="50%" valign="top" bgcolor="#ffffff">
-            <h6><span>Are You a KITER?</span></h6>
-            <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
-                <table width="90%" border="0" cellpadding="8" cellspacing="1" bgcolor="#B0D8FF" class="table">
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.username}</strong></div></td>
-                    <td bgcolor="#ffffff"><input name="username" type="text" class="inputBg" id="username" /></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.password}</strong></div></td>
-                    <td bgcolor="#ffffff"><input name="password" class="inputBg" type="password" /></td>
-                  </tr>
-                  <!-- 判断是否启用验证码{if $enabled_login_captcha} -->
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.comment_captcha}:</strong></div></td>
-                    <td bgcolor="#ffffff"><input type="text" size="8" name="captcha" class="inputBg" />
-                    <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
-                  </tr>
-                  <!--{/if}-->
-                  <tr>
-            <td colspan="2"  bgcolor="#ffffff"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label>&nbsp;&nbsp;<!--<a href="user.php?act=get_password" class="f6">{$lang.get_password_by_mail}</a> --></td>
-          </tr>
-                 
-                  <tr>
-                    <td bgcolor="#ffffff" colspan="2"><div align="center">
-                        <input type="submit" class="bnt_blue" name="login" value="{$lang.forthwith_login}" />
-                       
-                        <input name="act" type="hidden" value="signin" />
-                      </div></td>
-                  </tr>
-                </table>
-                
-                   <h6><span>New Customer：</span></h6>
-                   <div  align="center">
-                       <!-- {if $anonymous_buy eq 1} 是否允许未登录用户购物 -->
-                        <input type="button" class="bnt_blue_2" value="{$lang.direct_shopping}" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
-                        <br/>
-                        <!-- {/if} -->
-                    </div>
-                    <br/>
-              </form>
-
-              </td>
-            
-          </tr>
-          {if $need_rechoose_gift}
-          <tr>
-            <td colspan="2" align="center" style="border-top:1px #ccc solid; padding:5px; color:red;">{$lang.gift_remainder}</td>
-          </tr>
-          {/if}
-        </table>
-        </div>
-        <!-- 结束用户登录注册界面 -->
-        <!-- {/if} -->
+      </script>
+      <!-- 如果有收货地址，循环显示用户的收货地址 -->
+      <!-- {foreach from=$consignee_list item=consignee key=sn} -->
+      <form action="flow.php" method="post" name="theForm" id="theForm" onsubmit="return checkConsignee(this)"><!-- #BeginLibraryItem "/Library/consignee_login.lbi" -->
+{insert_scripts files='utils.js,transport.js'}
+<!-- #EndLibraryItem -->
+</form>
+      <!-- {/foreach} -->
+      <!-- 结束用户登录注册界面 -->
+      <!-- {/if} -->
 
 
 

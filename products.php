@@ -94,7 +94,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('currentPage','products');
 	
 	//获得Tea列表
-	$sql = "SELECT goods_name,goods_id,brand_id,goods_img,goods_desc FROM " . $ecs->table('goods') ;
+	$sql = "SELECT goods_name,goods_id,cat_id,brand_id,goods_img,goods_desc FROM " . $ecs->table('goods') ;
 	$goods = $GLOBALS['db']->getAll($sql);
 	
 	$smarty->assign('goods',$goods);
