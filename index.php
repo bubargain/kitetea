@@ -79,9 +79,10 @@ if (!empty($_GET['gOo']))
 //获取登录用户的历史订单信息
 
 
-include_once(ROOT_PATH . 'includes/lib_transaction.php');
+
 if($_SESSION['user_id'] & $_SESSION['user_id'] != 0)
 {
+	include_once(ROOT_PATH . 'includes/lib_transaction.php');
 	$user_id =$_SESSION['user_id'];
 	$page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
 

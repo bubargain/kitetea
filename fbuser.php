@@ -17,7 +17,4 @@ if($_REQUEST['step'] == 'login')
 	
 	$result = $GLOBALS['db']->query($sql);
 	$_SESSION['user_id'] = $uid;
-	 
-	 if($_GET['reload'] == 1)
-	 	header('Location: http://www.kitetea.com/');
 }

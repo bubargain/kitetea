@@ -56,6 +56,27 @@ if (!empty($_GET['gOo']))
     }
 }
 
+
+if($_SESSION['user_id'] & $_SESSION['user_id'] != 0)
+{
+	include_once(ROOT_PATH . 'includes/lib_transaction.php');
+	$user_id =$_SESSION['user_id'];
+	$page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
+
+    $record_count = $db->getOne("SELECT COUNT(*) FROM " .$ecs->table('order_info'). " WHERE user_id = '$user_id'");
+
+    $pager  = get_pager('user.php', array('act' => $action), $record_count, $page);
+
+    $orders = get_user_orders($user_id, $pager['size'], $pager['start']);
+	
+	
+	//var_dump($orders);die();
+    $smarty->assign('pager',  $pager);
+    $smarty->assign('orders', $orders);
+	$smarty->assign('ordersnum', count($orders));
+}
+
+
 //判断是否有ajax请求
 $act = !empty($_GET['act']) ? $_GET['act'] : '';
 if ($act == 'cat_rec')

@@ -80,6 +80,13 @@ em{font-style:normal}
 }
 .btn{animation: outtwo 0.5s;-moz-animation: outtwo 0.5s;-webkit-animation: outtwo 0.5s;-o-animation: outtwo 0.5s;color:#fff;font-size:24px;opacity:1;background:#eba568;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px}
 .btn:hover{animation: myfirst 0.5s;-moz-animation: myfirst 0.5s;-webkit-animation: myfirst 0.5s;-o-animation: myfirst 0.5s;background:#f39800}
+.btn2{animation: outtwo 0.5s;-moz-animation: outtwo 0.5s;-webkit-animation: outtwo 0.5s;-o-animation: outtwo 0.5s;color:#fff;font-size:16px;opacity:1;background:#eba568;height:44px;display:inline-block;padding:5px 35px 0 35px;border-radius:8px}
+.btn2:hover{animation: myfirst 0.5s;-moz-animation: myfirst 0.5s;-webkit-animation: myfirst 0.5s;-o-animation: myfirst 0.5s;background:#f39800}
+.btn2s{animation: outtwo 0.5s;-moz-animation: outtwo 0.5s;-webkit-animation: outtwo 0.5s;-o-animation: outtwo 0.5s;color:#fff;font-size:14px;opacity:1;background:#eba568;height:30px;display:inline-block;padding:2px 15px 0 15px;border-radius:8px}
+.btn2s:hover{animation: myfirst 0.5s;-moz-animation: myfirst 0.5s;-webkit-animation: myfirst 0.5s;-o-animation: myfirst 0.5s;background:#f39800}
+.btn3{animation: outtwo 0.5s;-moz-animation: outtwo 0.5s;-webkit-animation: outtwo 0.5s;-o-animation: outtwo 0.5s;color:#fff;font-size:16px;opacity:1;background:#CCC;height:44px;display:inline-block;padding:10px 35px 0 35px;border-radius:8px}
+.btn3:hover{background:#666;font-weight:500}
+
 .hr{ background:linear-gradient(#fff,#d7d5d5);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#d7d5d5));}
 .hr2{ background:linear-gradient(#d7d5d5,#fff);height:13px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#d7d5d5), to(#fff))}
 .hr3{ background:linear-gradient(#eae9e9,#fff);height:9px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#eae9e9), to(#fff))}

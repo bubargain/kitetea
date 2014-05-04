@@ -117,7 +117,11 @@
             <td bgcolor="#ffffff">
             <!--<a href="./"><img src="images/continue.gif" alt="continue" /></a>-->
             </td>
-            <td bgcolor="#ffffff" align="CENTER"><a href="flow.php?step=checkout">SAVE RECIPE</a></td>
+            <td bgcolor="#ffffff" align="CENTER">
+            	<div class="btn_div">
+		            <a class="btn" href="flow.php?step=checkout">SAVE RECIPE</a>
+                </div>
+            </td>
           </tr>
         </table>
        <!-- {if $smarty.session.user_id gt 0} -->
@@ -166,18 +170,7 @@
     <div class="blank"></div>
   <!-- {/if} -->
 
-  <!-- {if $collection_goods} -->
-  <div class="flowBox">
-    <h6><span>{$lang.label_collection}</span></h6>
-    <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-      <!-- {foreach from=$collection_goods item=goods} -->
-          <tr>
-            <td bgcolor="#ffffff"><a href="goods.php?id={$goods.goods_id}" class="f6">{$goods.goods_name}</a></td>
-            <td bgcolor="#ffffff" align="center" width="100"><a href="javascript:addToCart({$goods.goods_id})" class="f6">{$lang.collect_to_flow}</a></td>
-          </tr>
-      <!-- {/foreach} -->
-        </table>
-      <!-- {/if} -->
+  
   </div>
     <div class="blank5"></div>
   <!-- {/if} -->
@@ -570,7 +563,7 @@
 
                 {$lang.input_bonus_no}
                 <input name="bonus_sn" type="text" class="inputBg" size="15" value="{$order.bonus_sn}" />
-                <input name="validate_bonus" type="button" class="bnt_blue_1" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
+                <input name="validate_bonus" type="button" class="btn2s" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
               </td>
             </tr>
             <!-- {/if} 是否使用红包 -->
@@ -617,7 +610,7 @@
     <h6><span>{$lang.fee_total}</span></h6>
           <!-- #BeginLibraryItem "/Library/order_total.lbi" --><!-- #EndLibraryItem -->
            <div align="center" style="margin:8px auto;">
-            <input type="image" src="images/bnt_subOrder.gif" />
+            <input type="submit" class="btn2" value="SUBMIT" />
             <input type="hidden" name="step" value="done" />
             </div>
     </div>
@@ -734,9 +727,7 @@
       </script>
       <!-- 开始用户登录注册界面 -->
       
-      <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td valign="top" >
+      <div style="margin:20px 0 0 100px">
                 <div id="fb-root"></div>
                 <script>
                   window.fbAsyncInit = function() {
@@ -806,12 +797,7 @@
                  <!-- {/if} -->
              <fb:login-button show-faces="true"  size="xlarge" max-rows="1">
 				 Log in</fb:login-button>
-          </td>
-
-           
-        </tr>
-       
-      </table>
+        </div>
       <br/>
       <!--用户地址填写界面-->
       <!-- {if $smarty.session.user_id = 0 } --><div class="title-div">or Direct Purchase</div><!-- {/if} -->

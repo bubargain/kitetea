@@ -7,6 +7,7 @@
 <meta name="Keywords" content="{$keywords}" />
 <meta name="Description" content="{$description}" />
 <link href="{$ecs_css_path}/style.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_css_path}/help.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -41,18 +42,19 @@
                 	<h2>ORDER QUESTIONS</h2>
                     <div>
                     	<span>Where do you ship?</span>
-                        <p>We currently ship to the entire United States, Canada, and all US Military locations around the world via their APO, FPO & DPO addresses. In addition, we ship to Russia, Japan, Korea ,Brazil and almost all countries 'CHINA POST' can achieve, you may experience slightly longer delivery timelines).  </p>
+                        <p>We currently ship to the  United States, Canada, England, France, Australia and Russia Via Primary EMS E-package Service. In addition, we ship to almost all countries 'CHINA POST' can achieve, you may experience slightly longer delivery timelines).  </p>
                     </div>
                     <div>
                     	<span>Do you offer free shipping?</span>
-                        <p>We offer free shipping on any order over $30.  Our standard economy option costs $5, but we're hoping to offer lower shipping costs in the future.    </p>
+                        <p>We offer free shipping on any order over $30.  Our standard economy option costs just $2, but we're hoping to offer lower shipping costs in the future.    </p>
                     </div>
                     <div>
                     	<span>I need my order fast! Can I pay for expedited shipping?</span>
-                        <p>If for any reason you need to receive your order in fewer than 5 business days, you can expedite the processing of your order for an additional fee. In the US you may pay $10 for 3-4 day shipping. If you have any questions, you can reach us at (021) 6054.6040 from 10am-6pm </p>
+                        <p>E-package is the most in-time delivery as we know. But if you do have need for a emergency purchase, please contact us at contact@kitetea.com to see what we can do.  </p>
                     </div>
                     <h2>PRODUCT QUESTIONS</h2>
-                  
+                 	 <span>Will you charge more if I add multi tea mates?</span>
+                     <p>The answer is NO. We are not going to charge extra money for tea mates, you may choose as many as you need. </p>
                     <h2>AUTO-REFILL QUESTIONS</h2>
                      <div>
                     <span>How does auto-refill work?</span>
