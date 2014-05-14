@@ -118,7 +118,7 @@
                             </div>
                            <script type="text/javascript">
 						   	new scale('btn{$onegoods.goods_id}','bar{$onegoods.goods_id}','ingre{$onegoods.goods_id}');
-							tea.push(['{$onegoods.goods_img}','{$onegoods.goods_desc}']);
+							tea.push(['{$onegoods.goods_img}','{$onegoods.goods_brief}']);
 						   </script> 
                             
                        <!--{/if}-->
@@ -130,7 +130,7 @@
                         </div>
                         <!-- 示意图 -->
                         <div class="l products_tear">
-                        	<img src="images/tea.jpg" width="285" height="189" class="l">
+                        	<img src="images/tea.jpg" width="200" height="200" class="l">
                             <p>Choose the favor you like and make your speical blend.</p>
                         </div>
                       
