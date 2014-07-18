@@ -189,7 +189,7 @@ That is it! Press ’SAVE’ button to keep your exclusive taste<br>
 		});	
 		$(".products_teadiv a").hover(function(){
 			var num=$(this).parent().parent().index();
-		    alert(num);
+		   
 			$(".products_tear img").attr("src",tea[num][0]);	
 			$(".products_tear p").html(tea[num][1]);	
 		});
