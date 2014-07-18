@@ -262,7 +262,9 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit' || $_REQUEST['ac
 
         if (!empty($goods['goods_brief']))
         {
-            //$goods['goods_brief'] = trim_right($goods['goods_brief']);
+			$qian=array("\'","\"","\t","\n","\r");
+			$hou=array(" "," "," "," "," ");    
+            $goods['goods_brief'] = str_replace($qian,$hou,$goods['goods_brief']);
             $goods['goods_brief'] = $goods['goods_brief'];
         }
         if (!empty($goods['keywords']))
