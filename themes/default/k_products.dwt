@@ -117,7 +117,7 @@
                                 </div>
                                  <script type="text/javascript">
 						   		new scale('btn{$onegoods.goods_id}','bar{$onegoods.goods_id}','ingre{$onegoods.goods_id}');
-								tea.push(['{$onegoods.goods_img}','{$onegoods.goods_brief}']);
+								tea.push(['{$onegoods.goods_img}',"{$onegoods.goods_brief}"]);
 						 		  </script>
                             </div>
                            
