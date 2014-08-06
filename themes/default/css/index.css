@@ -3,7 +3,7 @@
 /************页面正文样式******/
 .topics_imgbg{background:url(../images/home_03.png) repeat-x;height:14px;margin-bottom:-14px;z-index:9999;position:relative}
 .topics_img{width:100%;position:relative}
-.topics_img_box{}
+.topics_img_box{height:518px}
 .topics_img_box a{width:100%;position:absolute}
 .topics_img_icon{position:relative;margin:-3% 0 0 0;text-align:center}
 .topics_img_icon a{background:#959595;margin:0 10px;width:5px;height:5px;display:inline-block;border-radius:5px}
@@ -29,10 +29,99 @@
 .color2{background:#b3d465}
 .color3{background:#cfa972}
 .color4{background:#dcdcdc}
-.btn_div{border-top:1px #959595 dashed;border-bottom:1px #959595 dashed;padding:45px 0;clear:both;margin-top:40px}
+.btn_div{border-top:1px #959595 dashed;padding:15px 0;clear:both;margin-top:40px}
+/*********FEATURED PRODUCT*********/
+.more2 img:hover{background:url(../images/products_03.jpg)}
 /*********MORE FROM KITE TEA******/
 .more .col{width:360px;margin-right:13px}
 .more .grid{font-size:30px}
 .more h3{padding-top:50px}
 .more img:hover{opacity:0.6}
+/* 0705 */
+.kp_col{float:left;width:425px;margin:0 67px;}
+.kp_col a{color:#fff;margin-top:24px;}
+/* story */
+.ys_tit{width:100%;margin-top:90px;}
+.ys_tit h3{line-height:60px;font-size:48px;font-weight:bold;font-family:"microsoft yahei";text-align:center;}
+.ys_tit p{width:900px;margin:40px auto 0;font-size:16px;line-height:30px;text-align:left;}
+.hr3.ys_hr{margin-top:50px;}
+.story_list{width:100%;}
+.story_list a,.story_list a img{width:100%;float:left;}
+.story_list a{margin-bottom:5px;}
+.footer_div.ys_footer{border-top:none;}
+/*  */
+.clear{clear: both;overflow: hidden;}
+.pi_box{font-family:"GiddyupStd";margin-top:125px;}
+.pi_photo{width:520px;float:left;height:574px;position:relative;overflow:hidden;}
+.pi_photo img{position: absolute;top:0px;left:0px;width:520px;z-index:1;}
+.pi_photo a{position:absolute;top:0px;left:0px;width:520px;height:766px;z-index:2;text-align:center;font:28px "Kalinga";}
+.pi_photo a em{display:none;}
+.pi_photo a:hover{background:rgba(255,255,255,0.45);}
+.pi_photo a:hover em{display:block;height:574px;display:table-cell;vertical-align: middle;}
+
+.pi_price{width:520px;float:right;position:relative;}
+.pi_ptop{width:520px;height:136px;background-color:#acd373;float:left;z-index:100;}
+.pi_ptop h3{ font:48px Kalinga;width:100%;text-align:center;color:#fff;line-height:68px;}
+.pi_num{width:102px;height:52px;border:1px #598527 solid;margin-left:50px;float:left;}
+.pi_print{float:left;width:50px;height:48px;line-height:48px;padding-top:4px;text-align:center;color:#598527;font-size:36px;border:none;background-color:#fff;}
+.pi_num span{float:right;width:52px;height:52px;background-color:#598527;}
+.pi_num span a{width:51px;height:26px;float:right;background:url(../images/add_minu.png) no-repeat;}
+.pi_num span a.pi_add{background-position:0 0;}
+.pi_num span a.pi_minu{background-position:0 -25px;background-color:#8aa967;}
+.pi_prnum{float:left;width:146px;color:#fff;font-size:36px;line-height:52px;font-family:"Arial";padding-left:18px;}
+.pi_buybut{width:142px;line-height:52px;float:left;font-size:26px;background-color:#729c3e;text-align:center;color:#fff;font-family:"Arial";border-radius:2px;}
+.pi_text{width:100%;height:318px;background-color:#acd373;margin-top:14px;padding:10px 0;overflow:hidden;}
+.pi_text h3{line-height:60px;width:100%;text-align:center;color:#fff;font:36px Kalinga;}
+.pi_text p{font:22px Kalinga;line-height:38px;color:#406618;padding:0 20px;}
+.pi_tfat{height:258px;width:510px;}
+.pi_give{margin-top:30px;}
+.pi_givebut{width:142px;text-align:center;font:22px Kalinga;color:#fff;background-color:#8aa967;float:left;line-height:54px;border-radius:2px;margin-left:20px;}
+.pi_share{margin-left:170px;float:left;}
+.pi_share a{margin-left:20px;}
+
+.pi_tea{width:570px;float:left;margin-top:46px;position:relative;height:540px;}
+.pi_tea img{position:absolute;top:52px;left:0px;z-index:1;}
+.pi_tea a{position:absolute;z-index:2;display:block;}
+.pi_tea span{position:absolute;z-index:2;color:#959595;display:none;}
+.pi_tea dl{position:absolute;z-index:3;font-family:"Kalinga";color:#406618;}
+.pi_tea dl dt{font-size:18px;font-weight:bold;display:none;}
+.pi_tea dl dd{font-size:11px;margin-left:0px;line-height:14px;display:none;}
+.pi_t1{width:42px;height:42px;left:200px;top:85px;}
+.pi_t2{width:55px;height:58px;left:212px;top:236px;}
+.pi_t3{width:48px;height:52px;left:350px;top:252px;}
+.pi_t1 span{top:12px;left:48px;width:154px;}
+.pi_t1 dl{top:-30px;left:145px;width:240px;}
+.pi_t1 dl dt{line-height:42px;}
+.pi_t2 span{left:-98px;top:32px;width:96px;}
+.pi_t2 dl{top:9px;left:-200px;width:180px;}
+.pi_t2 dl dt{line-height:30px;}
+.pi_t3 span{width:1px;height:150px;top:56px;left:20px;border-left:1px #959595 dashed;}
+.pi_t3 dl{top:190px;left:-20px;width:240px;}
+
+.pi_details{width:490px;float:right;background-color:#acd373;margin-top:46px;height:520px;padding:10px 10px 10px 20px;}
+.pi_details dl{color:#fff;font-family:"Kalinga";width:100%;text-align:center;}
+.pi_details dl dt{font-size:40px;line-height:44px;}
+.pi_details dl dd{font-size:22px;line-height:42px;margin-left:0px;}
+.pi_datafat{width:100%;height:404px;overflow:hidden;}
+.pi_datacon{font-size:22px;color:#406618;font-family:"Kalinga";padding-right:8px;}
+
+.pi_ad{width:520px;height:358px;float:left;margin-top:82px;}
+
+.pi_maylike{width:520px;float:right;margin-top:20px;}
+.pi_maylike h3{font:28px "Kalinga";color:#598527;text-decoration:underline;}
+.pi_mlcon{width:100%;}
+.pi_mlcon a{margin-top:16px;width:232px;height:80px;font:26px/80px "Kalinga";color:#fff;float:left;text-align:center;}
+.pi_m1{background-color:#fbaf5d;margin-right:56px;}
+.pi_m2{background-color:#ff4d54;}
+.pi_m3{background-color:#82ca9c;margin-right:56px;}
+.pi_m4{background-color:#7accc8;}
+.pi_m5{background-color:#f26c4f;margin-right:56px;}
+.pi_m6{background-color:#998675;}
+.pi_mlcon a.pi_m7{background-color:#8aa967;height:66px;font:26px/70px "Kalinga";margin-top:18px;width:100%;letter-spacing:2px;}
+/* 滚动条样式 */
+.scrollBar div{background-color:#598527;border-radius:3px;position:absolute;cursor:pointer;left:0px;top:0px;}
+/* 0714 */
+.story_list a:hover img{opacity:0.3;filter:alpha(opacity=30);}
+.btn_more{float:right;margin-top:20px;}
+.topics_img_box a img{min-width:1120px;}
 

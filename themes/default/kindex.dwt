@@ -36,65 +36,86 @@
             <div class="index_con">
             	<div class="hr3"></div>
                 <div class="con_div">
+                	 <div class="featured">
+                        <h2>KITE  PRODUCTS</h2>
+                        <section class="grid">
+                        	 <div class="kp_col">
+                                <img src="images/kp_col2.jpg">
+                                <a href="http://www.aliexpress.com/store/1218085" target="new" class="btn">RECOMMENDED PRO</a>
+                            </div>
+                            <div class="kp_col">
+                               <a href="products.php"> <img src="images/kp_col1.jpg"></a>
+                                <a href="products.php" class="btn">TASTE DIY FLAVOR</a>
+                            </div>
+                           
+                        </section>
+                    </div>
+                     <div class="btn_div"></div>
                     <div class="featured more2">
                         <h2>FEATURED PRODUCTS</h2>
                         <section class="grid">
                             <div class="col">
 								
-                                <a href="products.php?g=black">
-                                    <img src="images/pro-pic2.jpg" width="240" height="240">
+                                <a href="http://www.aliexpress.com/item/Chinese-Breakfast-Tea-Whole-Leaves-Black-Tea-in-Pyramid-Tea-Bags-20-pieces-by-KITE/1993913756.html" target="new" >
+                                    <img src="images/product/chinese_breakfast_tea.jpg" 
+                                    onMouseOver="this.src='images/product/chinese_breakfast_tea_bk.png'"  onMouseOut="this.src='images/product/chinese_breakfast_tea.jpg'"
+                                    width="240" height="240">
                                     <div class="color_div"><span class="color1"></span></div>
-                                    <h3>BLACK TEA</h3>
-                                    <p class="price">$5.80</p>
+                                    <h3>CHINESE BREAKFAST</h3>
+                                   
                                 </a>
                             </div>
                             <div class="col">
 								
-                                <a href="products.php?g=green">
-                                    <img src="images/pro-pic3.jpg" width="240" height="240">
+                                <a href="http://www.aliexpress.com/store/product/Dragon-Well-Green-Tea-Whole-Leaves-Chinese-tea-in-tea-bags-20-pieces-by-KITE/1218085_1993898997.html" target="new" >
+                                    <img src="images/product/green_tea.jpg"
+                                    onMouseOver="this.src='images/product/green_tea_bk.png'"  onMouseOut="this.src='images/product/green_tea.jpg'"
+                                     width="240" height="240">
                                     <div class="color_div"><span class="color2"></span></div>
                                     <h3>GREEN TEA</h3>
-                                    <p class="price">$5.80</p>
+                                   
                                 </a>
                             </div>
                             <div class="col">
 								
-                                <a href="products.php?g=puer">
-                                    <img src="images/pro-pic1.jpg" width="240" height="240">
+                                <a href="http://www.aliexpress.com/store/product/Royal-Pu-erh-Tea-Whole-Leaves-Puer-Tea-In-Tea-Bags-20-pieces-by-KITE/1218085_2011938930.html" target="new" >
+                                    <img src="images/product/puer_tea.jpg" onMouseOver="this.src='images/product/puer_tea_bk.png'"  onMouseOut="this.src='images/product/puer_tea.jpg'" width="240" height="240">
                                     <div class="color_div"><span class="color3"></span></div>
                                     <h3>PUER TEA</h3>
-                                    <p class="price">$5.80</p>
+                                    
                                 </a>
                             </div>
                             <div class="col col_last">
 								
-                                <a href="products.php?g=white">
-                                    <img src="images/pro-pic4.jpg" width="240" height="240">
+                                <a href="http://www.aliexpress.com/store/product/Milk-Oolong-Tea-Top-quality-whole-leaves-in-pyramid-tea-bags-by-KITE-20-pieces/1218085_1993899827.html" target="new" >
+                                    <img src="images/product/milk_oolong_tea.jpg"
+                                    onMouseOver="this.src='images/product/milk_oolong_tea_bk.png'"  onMouseOut="this.src='images/product/milk_oolong_tea.jpg'"
+                                     width="240" height="240">
                                     <div class="color_div"><span class="color4"></span></div>
-                                    <h3>WHITE TEA</h3>
-                                    <p class="price">$5.80</p>
+                                    <h3>MILK OOLONG </h3>
+                                  
                                 </a>
                             </div>
                         </section>
-                        <div class="btn_div"><a href="products.php" class="btn">BLEND BY YOURSELF</a></div>
+                        <div class="btn_div"><!--<a href="products.php" class="btn">BLEND BY YOURSELF</a>--></div>
                     </div>
                     <div class="featured more">
                         <h2>MORE FROM KITE TEA</h2>
                         <section class="grid">
                             <div class="col">
-                                <a href="javascript:void(0)">
+                                <!--<a href="javascript:void(0)">-->
                                     <img src="images/index_13.jpg" width="360" height="360">
                                     <h3>FIND A STORE</h3>
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="javascript:void(0)">
+                                 <!--<a href="javascript:void(0)">-->
                                     <img src="images/index_15.jpg" width="360" height="360">
                                     <h3>GIVE A GIFT CARD</h3>
                                 </a>
                             </div>
                             <div class="col col_last">
-                                <a href="javascript:void(0)">
+                                <a href="http://www.kitetea.com/wp">
                                     <img src="images/index_17.jpg" width="360" height="360">
                                     <h3>BROWSE THE BLOGS</h3>
                                 </a>
