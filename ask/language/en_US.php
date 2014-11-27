@@ -1,7 +1,7 @@
 <?php
 // Translate by dup (286090923@qq.com)
 // modify by ytlreal
-
+$language['游客访问'] ='GUEST';
 $language['取消关注'] ='Unfollow';
 $language['关注'] ='Follow';
 $language['取消'] ='Cancel';
