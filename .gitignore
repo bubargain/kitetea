@@ -1,0 +1,6 @@
+*database.php
+ask/cache/*
+*config.php
+*db.php
+ask/system/config/database.php
+ask//system/core/config.php
