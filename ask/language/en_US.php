@@ -1,6 +1,10 @@
 <?php
 // Translate by dup (286090923@qq.com)
 // modify by ytlreal
+$language['7 天新增 %s 个讨论'] ='%s news in 7 days';
+$language['30 天新增 %s 个讨论'] ='%s news in 30 days';
+$language['添加评论'] ='Comment';
+$language['密码'] ='Password';
 $language['游客访问'] ='GUEST';
 $language['取消关注'] ='Unfollow';
 $language['关注'] ='Follow';
